@@ -34,4 +34,4 @@
 - [x] Add administrator-only payment review with approve, reject, and request-more-information actions.
 - [x] Activate a user’s VIP membership only after administrator approval, with a documented 30-day access period and user-specific dashboard update.
 - [x] Gate the paid predictions page using the verified active membership state and ensure pending/rejected users remain locked.
-- [ ] Add and run unit tests for payment validation and membership-access logic; verify desktop/mobile screens, Supabase state, and GitHub synchronization.
+- [x] Add and run unit tests for payment validation and membership-access logic; verify desktop/mobile screens, Supabase state, and GitHub synchronization.
