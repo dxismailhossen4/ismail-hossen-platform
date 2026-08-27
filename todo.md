@@ -10,4 +10,8 @@
 - [x] Apply mobile-first responsive behavior, visible focus states, and reduced-motion-safe visual transitions.
 - [x] Add focused Vitest coverage for core public-page navigation and CTA interaction logic.
 - [x] Verify desktop and mobile rendering, TypeScript checks, and automated tests.
-- [ ] Save the completed project version and push the source to the user’s GitHub repository; clarify the required Supabase destination before any external data deployment.
+- [x] Save the completed project version and push the source to the user’s GitHub repository; clarify the required Supabase destination before any external data deployment.
+- [x] Save the completed project version and push the source to the private GitHub repository https://github.com/dxismailhossen4/ismail-hossen-platform.
+- [x] Confirm the existing Supabase project will receive a secure user-specific RLS update without replacing the built-in website membership/auth stack.
+- [x] Inspect the selected Supabase table for a compatible user_id column and implement user-specific RLS policies using auth.uid() = user_id for permitted operations.
+- [x] Verify row-level security is enabled; legacy rows with a NULL user_id remain inaccessible to end users until an administrator assigns their rightful owner.
