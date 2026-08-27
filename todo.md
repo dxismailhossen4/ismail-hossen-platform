@@ -29,3 +29,9 @@
 - [x] Create a protected member-area navigation shell with Overview, Free Predictions, Paid Predictions, VIP Membership, Payment History, Prediction History, Profile, Security, Support, and Logout states.
 - [x] Add an administrator-oriented route structure with safely gated placeholder management sections for users, predictions, results, memberships, payments, and site content.
 - [x] Add automated route and navigation tests, verify desktop/mobile experience, and preserve the completed version in Supabase and GitHub.
+- [x] Review current payment and membership schemas plus administrator policies to define the secure manual verification workflow.
+- [x] Create an authenticated member payment-submission page with plan details, payment reference validation, required responsible-use acknowledgement, and pending status feedback.
+- [x] Add administrator-only payment review with approve, reject, and request-more-information actions.
+- [x] Activate a user’s VIP membership only after administrator approval, with a documented 30-day access period and user-specific dashboard update.
+- [x] Gate the paid predictions page using the verified active membership state and ensure pending/rejected users remain locked.
+- [ ] Add and run unit tests for payment validation and membership-access logic; verify desktop/mobile screens, Supabase state, and GitHub synchronization.
