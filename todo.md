@@ -39,4 +39,6 @@
 - [x] Add payment-proof upload to the authenticated payment submission form with image type, size, and required-file validation.
 - [x] Persist the approved proof location with the payment record and allow only the submitting user or an administrator to access it.
 - [x] Add an administrator proof preview/open action to the payment-verification screen without exposing proof assets publicly.
-- [ ] Add upload validation tests and verify protected desktop/mobile workflows, Supabase storage configuration, and GitHub synchronization.
+- [x] Add upload validation tests and verify protected desktop/mobile workflows, Supabase storage configuration, and GitHub synchronization.
+- [x] Revoke direct REST execution of the profile-trigger function and change payment review to SECURITY INVOKER; the payment RPC remains callable by authenticated clients but is restricted by explicit administrator checks and administrator RLS policies.
+- [x] Re-run Supabase security checks after remediation; remaining out-of-scope advisories are unreadable RLS-only tables `generated_images`, `hostinger_web_app_hosting_analyses`, and `project_release_registry`, plus optional Supabase Auth leaked-password protection.
