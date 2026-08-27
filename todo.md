@@ -55,3 +55,6 @@
 - [x] Add Nagad recipient details for Ismail Hossen using the supplied number 01863211541 and show wallet-specific payment instructions.
 - [x] Reserve the Bank Account channel until the bank name, account holder, account number, and branch are supplied, without inventing account details.
 - [ ] Add and run tests for payment-channel selection, verify desktop/mobile checkout presentation, and synchronize the completed update to Supabase and GitHub.
+- [x] Activate the Bank Account payment channel using the supplied Maybank beneficiary name IMON KHAN and account number 5140 1212 2490.
+- [x] Show bank-specific transfer instructions and a bank transfer reference field without storing or requesting user banking credentials.
+- [ ] Add and run tests for the active Maybank channel, verify the responsive checkout interface, and synchronize the update to Supabase and GitHub.

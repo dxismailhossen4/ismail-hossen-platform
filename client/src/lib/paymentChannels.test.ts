@@ -7,8 +7,15 @@ describe("payment channel configuration", () => {
     expect(getPaymentChannel("nagad").recipientValue).toBe("01863211541");
   });
 
-  it("keeps bank transfer unavailable until real bank details are supplied", () => {
-    expect(getPaymentChannel("bank").available).toBe(false);
-    expect(PAYMENT_CHANNELS.filter((channel) => channel.category === "Mobile Wallet")).toHaveLength(2);
+  it("activates the supplied Maybank beneficiary details for bank transfer", () => {
+    const bank = getPaymentChannel("bank");
+    expect(bank.available).toBe(true);
+    expect(bank.title).toBe("Maybank");
+    expect(bank.accountHolder).toBe("IMON KHAN");
+    expect(bank.recipientValue).toBe("5140 1212 2490");
+  });
+
+  it("keeps bKash, Nagad, and bank transfer available as separate checkout choices", () => {
+    expect(PAYMENT_CHANNELS.filter((channel) => channel.available)).toHaveLength(3);
   });
 });
