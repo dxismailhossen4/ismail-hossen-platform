@@ -21,7 +21,7 @@
 - [x] Create a protected user dashboard that redirects unauthenticated visitors and shows only the current user’s profile, membership status, and saved records.
 - [x] Verify or add the RLS policies required for dashboard data so users can only read their own records.
 - [x] Add automated tests for protected navigation and dashboard data-selection helpers, then re-check desktop and mobile interfaces.
-- [ ] Save the Supabase-authenticated version and push the updated source to GitHub.
+- [x] Save the Supabase-authenticated version and push the updated source to GitHub.
 - [x] Review the supplied 4D platform reference and provide page-structure guidance only, with no change to the current website or technical implementation.
 - [x] Define a shared public navigation model covering Home, Free Tips, Results, VIP, About, FAQ, Contact, and account entry points.
 - [x] Add a responsive header, mobile navigation, and reusable public-page shell while preserving the existing landing-page visual language.
