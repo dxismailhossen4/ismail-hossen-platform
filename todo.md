@@ -54,7 +54,9 @@
 - [x] Add bKash recipient details for Ismail Hossen using the supplied number 01706559143 and show wallet-specific payment instructions.
 - [x] Add Nagad recipient details for Ismail Hossen using the supplied number 01863211541 and show wallet-specific payment instructions.
 - [x] Reserve the Bank Account channel until the bank name, account holder, account number, and branch are supplied, without inventing account details.
-- [ ] Add and run tests for payment-channel selection, verify desktop/mobile checkout presentation, and synchronize the completed update to Supabase and GitHub.
+- [x] Add and run tests for payment-channel selection, verify desktop/mobile checkout presentation, and synchronize the completed update to Supabase and GitHub.
 - [x] Activate the Bank Account payment channel using the supplied Maybank beneficiary name IMON KHAN and account number 5140 1212 2490.
 - [x] Show bank-specific transfer instructions and a bank transfer reference field without storing or requesting user banking credentials.
-- [ ] Add and run tests for the active Maybank channel, verify the responsive checkout interface, and synchronize the update to Supabase and GitHub.
+- [x] Add and run tests for the active Maybank channel, verify the responsive checkout interface, and synchronize the update to Supabase and GitHub.
+- [ ] Capture and review the post-change mobile checkout entry route for the bKash, Nagad, and Maybank payment-channel interface.
+- [ ] Verify the authenticated checkout payment-channel presentation in a real session before final delivery, including active Maybank details and bank-specific reference label.
