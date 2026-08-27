@@ -61,4 +61,4 @@
 - [ ] Capture and review the post-change mobile checkout entry route for the bKash, Nagad, and Maybank payment-channel interface.
 - [ ] Verify the authenticated checkout payment-channel presentation in a real session before final delivery, including active Maybank details and bank-specific reference label.
 - [x] Update the authenticated checkout intro copy to mention Maybank alongside bKash and Nagad, then rerun tests and synchronize the correction.
-- [ ] Commit and push the Maybank checkout-copy correction, then verify the remote reflects the updated Checkout.tsx text before final checkpointing.
+- [x] Commit and push the Maybank checkout-copy correction, then verify the remote reflects the updated Checkout.tsx text before final checkpointing.
