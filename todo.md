@@ -42,3 +42,8 @@
 - [x] Add upload validation tests and verify protected desktop/mobile workflows, Supabase storage configuration, and GitHub synchronization.
 - [x] Revoke direct REST execution of the profile-trigger function and change payment review to SECURITY INVOKER; the payment RPC remains callable by authenticated clients but is restricted by explicit administrator checks and administrator RLS policies.
 - [x] Re-run Supabase security checks after remediation; remaining out-of-scope advisories are unreadable RLS-only tables `generated_images`, `hostinger_web_app_hosting_analyses`, and `project_release_registry`, plus optional Supabase Auth leaked-password protection.
+- [x] Add a local thumbnail preview for the selected payment-proof screenshot before submission, with accessible alternative text and no early upload.
+- [x] Add remove, replace, and re-upload controls so a user can change an incorrectly selected proof file before submitting.
+- [x] Improve the user dashboard payment history with clear payment status badges, proof-upload indicator, administrator notes, and appropriate pending/approved guidance.
+- [x] Prepare a concise explanation of the separate public, user, and administrator routes and the Supabase permission controls that protect them.
+- [ ] Add and run tests for proof selection state and payment status labels, then verify desktop/mobile interfaces and synchronization.
