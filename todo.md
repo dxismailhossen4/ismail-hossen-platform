@@ -46,4 +46,4 @@
 - [x] Add remove, replace, and re-upload controls so a user can change an incorrectly selected proof file before submitting.
 - [x] Improve the user dashboard payment history with clear payment status badges, proof-upload indicator, administrator notes, and appropriate pending/approved guidance.
 - [x] Prepare a concise explanation of the separate public, user, and administrator routes and the Supabase permission controls that protect them.
-- [ ] Add and run tests for proof selection state and payment status labels, then verify desktop/mobile interfaces and synchronization.
+- [x] Add and run tests for proof selection state and payment status labels, then verify desktop/mobile interfaces and synchronization.
