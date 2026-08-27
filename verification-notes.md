@@ -7,3 +7,5 @@
 - Product release `37f63de5` is recorded in Supabase as `maybank-bank-transfer-channel`; documentation commit `5c60266` is synchronized to GitHub.
 
 A post-correction desktop `/checkout` capture at 1280x720 also showed the intended protected sign-in gate with clear Sign In or Sign Up and Back to membership escape routes. Because no authenticated session was established, this capture does not claim that the private channel cards rendered.
+
+The corrected release record is now verified in Supabase as `maybank-checkout-copy-correction` with git commit `aa11669`, repository `https://github.com/dxismailhossen4/ismail-hossen-platform`, and the Maybank-inclusive checkout summary.
