@@ -47,3 +47,6 @@
 - [x] Improve the user dashboard payment history with clear payment status badges, proof-upload indicator, administrator notes, and appropriate pending/approved guidance.
 - [x] Prepare a concise explanation of the separate public, user, and administrator routes and the Supabase permission controls that protect them.
 - [x] Add and run tests for proof selection state and payment status labels, then verify desktop/mobile interfaces and synchronization.
+- [x] Add an accessible upload-in-progress panel with clear step-by-step feedback and disable duplicate submissions while the payment proof is being processed.
+- [x] Add a polished success confirmation that explicitly states the proof submission is complete and the payment is pending administrator verification.
+- [ ] Add focused tests for payment-submission feedback states, verify responsive rendering, and synchronize the completed update to Supabase and GitHub.
