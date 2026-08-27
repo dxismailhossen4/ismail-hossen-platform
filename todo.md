@@ -35,3 +35,8 @@
 - [x] Activate a user’s VIP membership only after administrator approval, with a documented 30-day access period and user-specific dashboard update.
 - [x] Gate the paid predictions page using the verified active membership state and ensure pending/rejected users remain locked.
 - [x] Add and run unit tests for payment validation and membership-access logic; verify desktop/mobile screens, Supabase state, and GitHub synchronization.
+- [x] Review the available secure file-storage capability and define user-specific payment-proof metadata and access rules.
+- [x] Add payment-proof upload to the authenticated payment submission form with image type, size, and required-file validation.
+- [x] Persist the approved proof location with the payment record and allow only the submitting user or an administrator to access it.
+- [x] Add an administrator proof preview/open action to the payment-verification screen without exposing proof assets publicly.
+- [ ] Add upload validation tests and verify protected desktop/mobile workflows, Supabase storage configuration, and GitHub synchronization.
