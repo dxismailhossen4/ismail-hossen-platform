@@ -1,0 +1,35 @@
+export type MembershipRecord = {
+  id: string;
+  status: "inactive" | "pending" | "active" | "expired";
+  starts_at: string | null;
+  expires_at: string | null;
+};
+
+export type PaymentRecord = {
+  id: string;
+  amount: string | number;
+  currency: string;
+  payment_method: string;
+  status: "pending" | "approved" | "rejected" | "more_info";
+  submitted_date: string;
+  created_at: string;
+};
+
+export function hasActiveMembership(membership: MembershipRecord | null) {
+  if (!membership || membership.status !== "active") return false;
+  if (!membership.expires_at) return true;
+  return new Date(membership.expires_at).getTime() > Date.now();
+}
+
+export function formatMembershipStatus(membership: MembershipRecord | null) {
+  if (!membership) return "Free";
+  if (membership.status === "active" && hasActiveMembership(membership)) return "VIP Active";
+  if (membership.status === "expired" || (membership.expires_at && new Date(membership.expires_at).getTime() <= Date.now())) return "Expired";
+  return membership.status.charAt(0).toUpperCase() + membership.status.slice(1);
+}
+
+export function formatDate(value: string | null | undefined) {
+  if (!value) return "Not set";
+  const date = new Date(value);
+  return Number.isNaN(date.getTime()) ? "Not set" : date.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
+}

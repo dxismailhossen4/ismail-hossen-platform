@@ -1,16 +1,17 @@
-import { startLogin } from "@/const";
-import { useAuth } from "@/_core/hooks/useAuth";
+import { useSupabaseAuth } from "@/contexts/SupabaseAuthContext";
 import { getMembershipPath, PROOF_SECTION_ID } from "@/lib/membership";
-import { ArrowRight, Check, CirclePlay, LockKeyhole, Play, Sparkles, UserRound } from "lucide-react";
+import { PUBLIC_NAV_ITEMS } from "@/lib/navigation";
+import { ArrowRight, Check, CirclePlay, LockKeyhole, Menu, Play, Sparkles, UserRound, X } from "lucide-react";
 import { useState } from "react";
 import { useLocation } from "wouter";
 
 const MEMBER_BENEFITS = ["Focused daily updates", "A disciplined member flow", "Clear access pathway"];
 
 export default function Home() {
-  const { isAuthenticated, loading } = useAuth();
+  const { isAuthenticated, loading } = useSupabaseAuth();
   const [, setLocation] = useLocation();
   const [proofActivated, setProofActivated] = useState(false);
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const goToMembership = () => setLocation(getMembershipPath());
 
@@ -21,10 +22,10 @@ export default function Home() {
 
   const handleSignIn = () => {
     if (isAuthenticated) {
-      goToMembership();
+      setLocation("/account");
       return;
     }
-    startLogin();
+    setLocation("/auth");
   };
 
   return (
@@ -42,24 +43,15 @@ export default function Home() {
           Ismail Hossen<span className="text-[#ff6b00]">.</span>
         </button>
 
-        <nav className="flex items-center gap-2 sm:gap-3" aria-label="Primary navigation">
-          <button
-            type="button"
-            onClick={handleSignIn}
-            className="soft-button inline-flex min-h-10 items-center gap-2 rounded-xl border border-slate-500/45 bg-slate-950/20 px-3 py-2 text-sm font-bold text-slate-100 hover:border-orange-300/60 hover:bg-slate-900/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff8a3d] sm:px-4"
-          >
-            <UserRound className="size-4" aria-hidden="true" />
-            <span>{loading ? "Loading" : "Sign In"}</span>
-          </button>
-          <button
-            type="button"
-            onClick={goToMembership}
-            className="soft-button orange-glow inline-flex min-h-10 items-center gap-2 rounded-xl bg-[#ff6b00] px-3 py-2 text-sm font-extrabold text-[#1c0b00] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffad70] sm:px-4"
-          >
-            <span className="hidden sm:inline">Get Started</span>
-            <ArrowRight className="size-4" aria-hidden="true" />
-          </button>
+        <nav className="hidden items-center gap-1 lg:flex" aria-label="Public navigation">
+          {PUBLIC_NAV_ITEMS.slice(0, 5).map((item) => <button key={item.path} type="button" onClick={() => setLocation(item.path)} className="soft-button rounded-lg px-3 py-2 text-sm font-semibold text-slate-300 hover:text-white focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#ff8a3d]">{item.label}</button>)}
         </nav>
+        <div className="flex items-center gap-2 sm:gap-3">
+          <button type="button" onClick={handleSignIn} className="soft-button inline-flex min-h-10 items-center gap-2 rounded-xl border border-slate-500/45 bg-slate-950/20 px-3 py-2 text-sm font-bold text-slate-100 hover:border-orange-300/60 hover:bg-slate-900/90 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff8a3d] sm:px-4"><UserRound className="size-4" aria-hidden="true" /><span>{loading ? "Loading" : isAuthenticated ? "My Account" : "Sign In"}</span></button>
+          <button type="button" onClick={goToMembership} className="soft-button orange-glow inline-flex min-h-10 items-center gap-2 rounded-xl bg-[#ff6b00] px-3 py-2 text-sm font-extrabold text-[#1c0b00] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffad70] sm:px-4"><span className="hidden sm:inline">Get Started</span><ArrowRight className="size-4" aria-hidden="true" /></button>
+          <button type="button" onClick={() => setMobileNavOpen((open) => !open)} className="soft-button grid size-10 place-items-center rounded-xl border border-slate-500/45 bg-slate-950/20 text-slate-100 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff8a3d] lg:hidden" aria-expanded={mobileNavOpen} aria-controls="home-mobile-navigation" aria-label={mobileNavOpen ? "Close navigation" : "Open navigation"}>{mobileNavOpen ? <X className="size-5" aria-hidden="true" /> : <Menu className="size-5" aria-hidden="true" />}</button>
+        </div>
+        {mobileNavOpen ? <div id="home-mobile-navigation" className="panel-border absolute inset-x-5 top-[4.8rem] grid gap-1 rounded-2xl bg-[#0c1425]/98 p-3 shadow-2xl backdrop-blur-xl sm:inset-x-8 lg:hidden">{PUBLIC_NAV_ITEMS.map((item) => <button key={item.path} type="button" onClick={() => { setMobileNavOpen(false); setLocation(item.path); }} className="soft-button rounded-xl px-4 py-3 text-left text-sm font-bold text-slate-200 hover:bg-orange-400/10 hover:text-orange-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8a3d]">{item.label}</button>)}</div> : null}
       </header>
 
       <section className="relative mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-7xl place-items-center px-5 pb-16 pt-18 text-center sm:px-8 sm:pb-20 sm:pt-24 lg:px-10">
@@ -151,10 +143,7 @@ export default function Home() {
       </section>
 
       <footer className="relative border-t border-slate-700/40 bg-[#050914]/45 px-5 py-8 sm:px-8 lg:px-10">
-        <div className="mx-auto grid max-w-6xl gap-4 text-sm leading-6 text-slate-400 sm:grid-cols-[auto_1fr] sm:gap-8">
-          <p className="font-display font-bold tracking-[-0.03em] text-slate-200">Ismail Hossen<span className="text-[#ff6b00]">.</span></p>
-          <p className="max-w-3xl sm:justify-self-end sm:text-right"><strong className="font-bold text-slate-200">Responsible use:</strong> Membership content is informational only. Outcomes are not guaranteed, past results do not predict future results, and you should participate only within your own limits.</p>
-        </div>
+        <div className="mx-auto grid max-w-6xl gap-5 text-sm leading-6 text-slate-400 sm:grid-cols-[auto_1fr] sm:gap-8"><p className="font-display font-bold tracking-[-0.03em] text-slate-200">Ismail Hossen<span className="text-[#ff6b00]">.</span></p><div className="sm:justify-self-end sm:text-right"><p className="max-w-3xl"><strong className="font-bold text-slate-200">Responsible use:</strong> Membership content is informational only. Outcomes are not guaranteed, past results do not predict future results, and you should participate only within your own limits.</p><div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs font-bold text-slate-500 sm:justify-end">{PUBLIC_NAV_ITEMS.slice(5).map((item) => <button type="button" key={item.path} onClick={() => setLocation(item.path)} className="soft-button hover:text-orange-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8a3d]">{item.label}</button>)}</div></div></div>
       </footer>
     </main>
   );

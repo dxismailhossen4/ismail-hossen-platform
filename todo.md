@@ -15,3 +15,17 @@
 - [x] Confirm the existing Supabase project will receive a secure user-specific RLS update without replacing the built-in website membership/auth stack.
 - [x] Inspect the selected Supabase table for a compatible user_id column and implement user-specific RLS policies using auth.uid() = user_id for permitted operations.
 - [x] Verify row-level security is enabled; legacy rows with a NULL user_id remain inaccessible to end users until an administrator assigns their rightful owner.
+- [x] Inspect the configured Supabase Auth settings, project URL, publishable key, and existing membership-related schemas before integration.
+- [x] Add the Supabase browser client and securely configure the required public browser connection values.
+- [x] Replace the current sign-in entry with a complete Supabase email sign-in and sign-up experience, including clear loading, error, and confirmation states.
+- [x] Create a protected user dashboard that redirects unauthenticated visitors and shows only the current user’s profile, membership status, and saved records.
+- [x] Verify or add the RLS policies required for dashboard data so users can only read their own records.
+- [x] Add automated tests for protected navigation and dashboard data-selection helpers, then re-check desktop and mobile interfaces.
+- [ ] Save the Supabase-authenticated version and push the updated source to GitHub.
+- [x] Review the supplied 4D platform reference and provide page-structure guidance only, with no change to the current website or technical implementation.
+- [x] Define a shared public navigation model covering Home, Free Tips, Results, VIP, About, FAQ, Contact, and account entry points.
+- [x] Add a responsive header, mobile navigation, and reusable public-page shell while preserving the existing landing-page visual language.
+- [x] Create the planned public routes and structured content states for Free Tips, Results, Performance, VIP Membership, About, FAQ, Contact, Terms, Privacy, and Responsible Use.
+- [x] Create a protected member-area navigation shell with Overview, Free Predictions, Paid Predictions, VIP Membership, Payment History, Prediction History, Profile, Security, Support, and Logout states.
+- [x] Add an administrator-oriented route structure with safely gated placeholder management sections for users, predictions, results, memberships, payments, and site content.
+- [x] Add automated route and navigation tests, verify desktop/mobile experience, and preserve the completed version in Supabase and GitHub.
