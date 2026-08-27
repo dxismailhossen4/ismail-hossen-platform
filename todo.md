@@ -50,3 +50,8 @@
 - [x] Add an accessible upload-in-progress panel with clear step-by-step feedback and disable duplicate submissions while the payment proof is being processed.
 - [x] Add a polished success confirmation that explicitly states the proof submission is complete and the payment is pending administrator verification.
 - [x] Add focused tests for payment-submission feedback states, verify responsive rendering, and synchronize the completed update to Supabase and GitHub.
+- [x] Create a payment-channel selection model supporting bank transfer, bKash, and Nagad without exposing the recipient details outside the authenticated checkout flow.
+- [x] Add bKash recipient details for Ismail Hossen using the supplied number 01706559143 and show wallet-specific payment instructions.
+- [x] Add Nagad recipient details for Ismail Hossen using the supplied number 01863211541 and show wallet-specific payment instructions.
+- [x] Reserve the Bank Account channel until the bank name, account holder, account number, and branch are supplied, without inventing account details.
+- [ ] Add and run tests for payment-channel selection, verify desktop/mobile checkout presentation, and synchronize the completed update to Supabase and GitHub.
