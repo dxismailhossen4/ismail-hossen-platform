@@ -100,3 +100,7 @@
 - [x] Add a dedicated daily photo/post area beside the existing PROOF MEDIA video section without requiring an image asset yet.
 - [x] Design an accessible empty state for the daily photo area that clearly indicates where the next daily image will appear.
 - [x] Validate the responsive video-plus-photo media layout, update tests/verification notes, synchronize to GitHub and Supabase, and save a checkpoint.
+
+- [x] Add an admin/owner-only Upload photo control to the Daily Photo Post card with image validation and replacement support.
+- [x] Store the selected daily photo through the project’s secure storage flow and show the current image or no-photo empty state to public visitors.
+- [ ] Add focused tests and responsive verification for daily-photo upload/replacement behavior, synchronize GitHub/Supabase, and save a checkpoint.

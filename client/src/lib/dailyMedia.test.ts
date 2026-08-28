@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { DAILY_PHOTO_EMPTY_STATE, getDailyPhotoState } from "./dailyMedia";
+import { DAILY_PHOTO_EMPTY_STATE, DAILY_PHOTO_MAX_BYTES, dailyPhotoValidationMessage, getDailyPhotoState, validateDailyPhotoFile } from "./dailyMedia";
 
 describe("daily photo media", () => {
   it("provides a clear empty state before an image is supplied", () => {
@@ -11,5 +11,12 @@ describe("daily photo media", () => {
 
   it("supports a ready state for a future daily image", () => {
     expect(getDailyPhotoState(true)).toBe("photo-ready");
+  });
+
+  it("accepts supported images and rejects unsupported or oversized files", () => {
+    expect(validateDailyPhotoFile({ type: "image/jpeg", size: 1024 })).toBeNull();
+    expect(validateDailyPhotoFile({ type: "image/gif", size: 1024 })).toBe("type");
+    expect(validateDailyPhotoFile({ type: "image/png", size: DAILY_PHOTO_MAX_BYTES + 1 })).toBe("size");
+    expect(dailyPhotoValidationMessage("size")).toContain("5 MB");
   });
 });

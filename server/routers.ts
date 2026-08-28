@@ -11,6 +11,8 @@ const supabaseUrl = "https://pfyviyhdyjztqvvvibby.supabase.co";
 const supabasePublishableKey = "sb_publishable_V8BlsMfB5VakOyFo8V2K5A_HpS4hVUU";
 const allowedProofTypes = new Set(["image/jpeg", "image/png", "image/webp"]);
 const maxProofBytes = 3 * 1024 * 1024;
+const allowedDailyPhotoTypes = new Set(["image/jpeg", "image/png", "image/webp"]);
+const maxDailyPhotoBytes = 5 * 1024 * 1024;
 
 type SupabaseProfile = { id: string; role: "user" | "admin" };
 type SupabasePayment = { user_id: string; payment_proof_key: string | null };
@@ -73,6 +75,23 @@ export const appRouter = router({
         if (!payment?.payment_proof_key) throw new TRPCError({ code: "NOT_FOUND", message: "No payment proof is available for this record." });
         if (payment.user_id !== user.id && profile?.role !== "admin") throw new TRPCError({ code: "FORBIDDEN", message: "You do not have access to this payment proof." });
         return { url: await storageGetSignedUrl(payment.payment_proof_key) };
+      }),
+  }),
+  dailyPhoto: router({
+    upload: publicProcedure
+      .input(z.object({ accessToken: z.string().min(20), fileName: z.string().min(1).max(120), contentType: z.string(), base64: z.string().min(4).max(7_000_000) }))
+      .mutation(async ({ input }) => {
+        const user = await getSupabaseUser(input.accessToken);
+        const profile = await getSupabaseProfile(input.accessToken, user.id);
+        if (profile?.role !== "admin") throw new TRPCError({ code: "FORBIDDEN", message: "Administrator access is required to update the daily photo." });
+        if (!allowedDailyPhotoTypes.has(input.contentType)) throw new TRPCError({ code: "BAD_REQUEST", message: "Only JPG, PNG, and WEBP daily photos are supported." });
+        if (!/^[A-Za-z0-9+/]+={0,2}$/.test(input.base64)) throw new TRPCError({ code: "BAD_REQUEST", message: "The daily photo format is invalid." });
+        const fileBuffer = Buffer.from(input.base64, "base64");
+        if (fileBuffer.length === 0 || fileBuffer.length > maxDailyPhotoBytes) throw new TRPCError({ code: "PAYLOAD_TOO_LARGE", message: "Daily photos must be 5 MB or smaller." });
+        const extension = input.contentType === "image/png" ? "png" : input.contentType === "image/webp" ? "webp" : "jpg";
+        const cleanBaseName = input.fileName.replace(/[^a-zA-Z0-9._-]/g, "-").replace(/\.[^.]+$/, "").slice(0, 70) || "daily-photo";
+        const { key, url } = await storagePut(`public/daily-photos/${cleanBaseName}.${extension}`, fileBuffer, input.contentType);
+        return { key, url, fileName: `${cleanBaseName}.${extension}`, contentType: input.contentType };
       }),
   }),
 });

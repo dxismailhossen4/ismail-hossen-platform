@@ -2,10 +2,11 @@ import HowItWorks from "@/components/HowItWorks";
 import SocialContactPanel from "@/components/SocialContactPanel";
 import { useSupabaseAuth } from "@/contexts/SupabaseAuthContext";
 import { getMembershipPath, PROOF_SECTION_ID } from "@/lib/membership";
+import { supabase } from "@/lib/supabase";
 import { DAILY_PHOTO_EMPTY_STATE } from "@/lib/dailyMedia";
 import { PUBLIC_NAV_ITEMS } from "@/lib/navigation";
 import { ArrowRight, CalendarDays, Check, CirclePlay, ImageIcon, LockKeyhole, Menu, Play, Sparkles, UserRound, X } from "lucide-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 
 const MEMBER_BENEFITS = ["Focused daily updates", "A disciplined member flow", "Clear access pathway"];
@@ -21,7 +22,17 @@ export default function Home() {
   const { isAuthenticated, loading } = useSupabaseAuth();
   const [, setLocation] = useLocation();
   const [proofPlaying, setProofPlaying] = useState(false);
+  const [dailyPhotoUrl, setDailyPhotoUrl] = useState<string | null>(null);
   const proofVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    let active = true;
+    void supabase.rpc("get_daily_photo").then(({ data }) => {
+      const value = data as { url?: string } | null;
+      if (active) setDailyPhotoUrl(value?.url ?? null);
+    });
+    return () => { active = false; };
+  }, []);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const goToMembership = () => setLocation(getMembershipPath());
@@ -195,12 +206,10 @@ export default function Home() {
                 <CalendarDays className="size-5 text-orange-300" aria-hidden="true" />
               </div>
               <div className="relative z-10 m-auto w-full text-center">
-                <div className="mx-auto grid size-20 place-items-center rounded-2xl border border-dashed border-orange-300/35 bg-orange-400/[0.07] text-orange-200 shadow-[0_0_0_10px_rgba(255,107,0,0.04)] sm:size-24">
-                  <ImageIcon className="size-9 sm:size-10" aria-hidden="true" />
-                </div>
+                {dailyPhotoUrl ? <img src={dailyPhotoUrl} alt="Today’s SINGAPORE POOLS 4D6D daily photo" className="mx-auto max-h-56 w-full rounded-2xl border border-white/10 object-cover shadow-2xl sm:max-h-64" /> : <div className="mx-auto grid size-20 place-items-center rounded-2xl border border-dashed border-orange-300/35 bg-orange-400/[0.07] text-orange-200 shadow-[0_0_0_10px_rgba(255,107,0,0.04)] sm:size-24"><ImageIcon className="size-9 sm:size-10" aria-hidden="true" /></div>}
                 <h2 id="daily-photo-title" className="font-display mt-6 text-2xl font-extrabold tracking-[-0.04em] text-white">{DAILY_PHOTO_EMPTY_STATE.title}</h2>
-                <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-slate-300">{DAILY_PHOTO_EMPTY_STATE.description}</p>
-                <div className="mt-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.035] px-3 py-2 text-xs font-semibold text-slate-400">{DAILY_PHOTO_EMPTY_STATE.badge}</div>
+                <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-slate-300">{dailyPhotoUrl ? "Today’s photo is now published. Check back tomorrow for the next daily update." : DAILY_PHOTO_EMPTY_STATE.description}</p>
+                {!dailyPhotoUrl ? <div className="mt-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.035] px-3 py-2 text-xs font-semibold text-slate-400">{DAILY_PHOTO_EMPTY_STATE.badge}</div> : null}
               </div>
               <p className="relative z-10 mt-6 text-xs font-semibold tracking-[0.1em] text-slate-500 uppercase">SINGAPORE POOLS 4D6D • Daily update</p>
             </div>

@@ -55,3 +55,7 @@ The supplied MP4 is now rendered in the home-page PROOF MEDIA section with nativ
 ## Daily photo-post placeholder
 
 The PROOF MEDIA section now uses a responsive two-card composition. The supplied video remains on the left on desktop, while a dedicated Daily Photo Post card sits beside it with a calendar marker, image placeholder icon, and the intentional “No photo posted yet” state. At mobile width, the cards stack vertically without clipping; the empty state, video controls, membership CTA, social links, and responsible-use footer remain readable. No photo asset is stored or required yet, leaving this slot ready for the user’s future daily image.
+
+## Daily photo upload and replacement controls
+
+The administrator site-content route now contains the daily-photo manager with a visible Upload photo or Choose replacement control, local image preview, Publish photo or Replace current photo action, JPG/PNG/WEBP validation, a 5 MB limit, loading feedback, and success/error messaging. The public home page reads the persisted daily-photo record through the restricted get_daily_photo RPC and continues to show the no-photo empty state until an administrator publishes an image. Desktop public and protected-route previews remain readable; the protected route correctly shows the sign-in gate when no authenticated admin session is available.
