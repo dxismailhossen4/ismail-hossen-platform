@@ -59,7 +59,7 @@
 - [x] Show bank-specific transfer instructions and a bank transfer reference field without storing or requesting user banking credentials.
 - [x] Add and run tests for the active Maybank channel, verify the responsive checkout interface, and synchronize the update to Supabase and GitHub.
 - [x] Capture and review the post-change mobile checkout entry route for the bKash, Nagad, and Maybank payment-channel interface; the protected sign-in gate remained readable and privacy-preserving.
-- [ ] Verify the authenticated checkout payment-channel presentation in a real session before final delivery, including active Maybank details and bank-specific reference label.
+- [x] Confirm the authenticated checkout payment-channel logo cards display correctly; the user confirmed the cards from a phone-authenticated session. Detailed Maybank beneficiary, transfer-instruction, and bank-reference-label inspection remains tracked separately.
 - [x] Update the authenticated checkout intro copy to mention Maybank alongside bKash and Nagad, then rerun tests and synchronize the correction.
 - [x] Commit and push the Maybank checkout-copy correction, then verify the remote reflects the updated Checkout.tsx text before final checkpointing.
 - [x] Add the supplied Facebook Official profile and Instagram @mdismail90154 links to the platform’s social navigation/contact surfaces.
@@ -77,4 +77,8 @@
 - [x] Capture and review desktop and mobile previews of the renamed “SINGAPORE POOLS 4D6D” branding on key public and dashboard surfaces, then document the results in verification-notes.md.
 - [x] Update the release notes and checkpoint summary to explicitly state the branding surfaces reviewed while keeping the authenticated checkout live-session item separate if it remains blocked.
 - [x] Capture mobile previews of the renamed “SINGAPORE POOLS 4D6D” branding on public pages and explicitly scope protected account/admin captures to their sign-in entry states when no real session is available.
-- [ ] Save a new WebDev checkpoint after the branding-preview notes and include the reviewed surfaces in its summary while keeping authenticated checkout verification separate.
+- [x] Save a new WebDev checkpoint after the branding-preview notes and include the reviewed surfaces in its summary while keeping authenticated checkout verification separate.
+- [ ] In a real authenticated checkout session, inspect and document the Maybank beneficiary details, bank-transfer instructions, and bank-specific reference field/label; the user has currently confirmed only that the logo cards display correctly.
+- [x] Compare the supplied wide reference image with the current public home layout and document whether a four-step “How it works” section already exists.
+- [x] Add a responsive structural “How it works” section with four visible steps—Explore free tips, Create account, Choose membership, and Access after verification—without inventing deeper content or new business logic.
+- [ ] Validate the section on desktop/mobile, add focused tests where appropriate, synchronize it to GitHub/Supabase, and save a checkpoint.

@@ -1,3 +1,4 @@
+import HowItWorks from "@/components/HowItWorks";
 import SocialContactPanel from "@/components/SocialContactPanel";
 import { useSupabaseAuth } from "@/contexts/SupabaseAuthContext";
 import { getMembershipPath, PROOF_SECTION_ID } from "@/lib/membership";
@@ -98,6 +99,8 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      <HowItWorks />
 
       <section id={PROOF_SECTION_ID} tabIndex={-1} className="relative mx-auto max-w-6xl scroll-mt-8 px-5 pb-12 outline-none sm:px-8 sm:pb-16 lg:px-10">
         <div className="panel-border overflow-hidden rounded-[1.65rem] bg-[#0a1120]/84 p-2 backdrop-blur-xl sm:rounded-[2rem] sm:p-3">

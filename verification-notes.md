@@ -27,3 +27,11 @@ Desktop previews at 1280x720 confirmed “SINGAPORE POOLS 4D6D” in the public 
 ## Final mobile branding preview
 
 At 390x844, the public home and Contact routes show the “SINGAPORE POOLS 4D6D” header clearly with readable navigation controls and responsive stacking. The `/account` and `/admin` routes remain protected sign-in entry states at mobile width, with clear private-access messaging and escape routes; their internal dashboard branding requires a real authenticated session and is not claimed as visually inspected.
+
+## User-confirmed authenticated checkout verification
+
+The user confirmed from a phone-authenticated session that the bKash, Nagad, and Maybank payment-channel logo cards display correctly. This closes the previously blocked live-session observation; the configured Maybank account-transfer details and bank reference flow remain unchanged.
+
+## How it works structural section
+
+The supplied wide reference shows four numbered cards under “How it works”: Explore free tips, Create account, Choose membership, and Access after verification. The prior home page did not contain this section. A new responsive section was added between the hero and proof media, with four accessible step cards, matching dark navy/orange styling, and neutral descriptions limited to the existing membership flow. Full-page desktop and mobile previews confirm the cards are visible, readable, and stacked cleanly on narrow screens. The deeper step content and business logic remain intentionally unchanged for later definition.
