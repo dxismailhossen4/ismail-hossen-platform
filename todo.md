@@ -58,7 +58,7 @@
 - [x] Activate the Bank Account payment channel using the supplied Maybank beneficiary name IMON KHAN and account number 5140 1212 2490.
 - [x] Show bank-specific transfer instructions and a bank transfer reference field without storing or requesting user banking credentials.
 - [x] Add and run tests for the active Maybank channel, verify the responsive checkout interface, and synchronize the update to Supabase and GitHub.
-- [ ] Capture and review the post-change mobile checkout entry route for the bKash, Nagad, and Maybank payment-channel interface.
+- [x] Capture and review the post-change mobile checkout entry route for the bKash, Nagad, and Maybank payment-channel interface; the protected sign-in gate remained readable and privacy-preserving.
 - [ ] Verify the authenticated checkout payment-channel presentation in a real session before final delivery, including active Maybank details and bank-specific reference label.
 - [x] Update the authenticated checkout intro copy to mention Maybank alongside bKash and Nagad, then rerun tests and synchronize the correction.
 - [x] Commit and push the Maybank checkout-copy correction, then verify the remote reflects the updated Checkout.tsx text before final checkpointing.
@@ -67,10 +67,14 @@
 - [x] Add focused tests for the social/contact link configuration and verify desktop/mobile rendering, then synchronize the completed update to Supabase and GitHub.
 - [x] Create and validate a reusable Manus skill that captures the platform workflow: requirement intake, dark premium public UI, Supabase Auth/RLS, manual payment verification, proof uploads, responsive checks, testing, GitHub/Supabase synchronization, and checkpoint delivery.
 - [x] Replace the current public branding text with “SINGAPORE POLS TOTO 4D6D” while preserving the premium dark navy/orange visual system and responsible-use language. Superseded by the confirmed exact name “SINGAPORE POOLS 4D6D”.
-- [ ] Run skill validation, website tests/type checks, responsive preview verification, synchronize the branding update to GitHub and Supabase, and deliver the reusable skill package plus website checkpoint.
+- [x] Run skill validation, website tests/type checks, responsive preview verification, synchronize the branding update to GitHub and Supabase, and deliver the reusable skill package plus website checkpoint.
 - [x] Use the exact final brand spelling “SINGAPORE POOLS 4D6D” across the website branding and reusable workflow examples; keep historical beneficiary identity only where required payment data must remain exact.
 - [x] Apply the confirmed final public brand name “SINGAPORE POOLS 4D6D” consistently across all visible website, owner-facing, and administrator-facing branding; preserve only explicitly supplied legal beneficiary data such as Maybank beneficiary IMON KHAN.
 - [x] Replace the old brand name everywhere it appears in public, member, owner, administrator, accessibility, metadata, and project-facing labels with the exact name “SINGAPORE POOLS 4D6D,” while preserving historical release descriptions only when required for audit context.
 - [x] Redesign the authenticated checkout payment-channel selector using the supplied visual reference: prominent bKash, Nagad, and Maybank logo treatments, Bengali-friendly labels, distinct channel cards, and mobile-first selection states while preserving the real configured payment details.
 - [x] Validate the logo-led checkout selector configuration with focused tests, payment-data checks, protected mobile-route preview, GitHub/Supabase synchronization, and checkpoint documentation; the authenticated card screenshot remains tracked separately in item 62.
 - [x] Reconcile the global naming history: the final user instruction requires “SINGAPORE POOLS 4D6D” A-to-Z, including owner/admin-facing labels; update the earlier contradictory history item and verify payment-channel labels match this rule without altering the explicitly supplied Maybank beneficiary IMON KHAN.
+- [x] Capture and review desktop and mobile previews of the renamed “SINGAPORE POOLS 4D6D” branding on key public and dashboard surfaces, then document the results in verification-notes.md.
+- [x] Update the release notes and checkpoint summary to explicitly state the branding surfaces reviewed while keeping the authenticated checkout live-session item separate if it remains blocked.
+- [x] Capture mobile previews of the renamed “SINGAPORE POOLS 4D6D” branding on public pages and explicitly scope protected account/admin captures to their sign-in entry states when no real session is available.
+- [ ] Save a new WebDev checkpoint after the branding-preview notes and include the reviewed surfaces in its summary while keeping authenticated checkout verification separate.

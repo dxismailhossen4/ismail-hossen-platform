@@ -19,3 +19,11 @@ Final mobile Contact-page check confirms the WhatsApp / IMO panel remains readab
 ## Payment-channel logo enhancement
 
 The authenticated checkout now presents uploaded bKash, Nagad, and Maybank logo assets with Bengali-friendly labels, distinct selected states, and the existing real recipient details. Focused configuration coverage and the full suite passed with 22 tests; TypeScript validation passed. A mobile `/checkout` preview confirms the privacy-preserving sign-in gate remains readable and responsive. The logo cards themselves require a real authenticated Supabase session for visual inspection; no fake session was created because signup remained rate-limited.
+
+## Global branding preview verification
+
+Desktop previews at 1280x720 confirmed “SINGAPORE POOLS 4D6D” in the public home header and retained the protected sign-in gate for account and administrator routes. The mobile `/checkout` preview at 390x844 remained readable and privacy-preserving. The live preview service metadata still displays the historical project title, but active page source and rendered public header use the confirmed brand. Authenticated dashboard and checkout card internals remain subject to the separate real-session limitation.
+
+## Final mobile branding preview
+
+At 390x844, the public home and Contact routes show the “SINGAPORE POOLS 4D6D” header clearly with readable navigation controls and responsive stacking. The `/account` and `/admin` routes remain protected sign-in entry states at mobile width, with clear private-access messaging and escape routes; their internal dashboard branding requires a real authenticated session and is not claimed as visually inspected.
