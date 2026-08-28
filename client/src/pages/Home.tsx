@@ -4,11 +4,12 @@ import { useSupabaseAuth } from "@/contexts/SupabaseAuthContext";
 import { getMembershipPath, PROOF_SECTION_ID } from "@/lib/membership";
 import { PUBLIC_NAV_ITEMS } from "@/lib/navigation";
 import { ArrowRight, Check, CirclePlay, LockKeyhole, Menu, Play, Sparkles, UserRound, X } from "lucide-react";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { useLocation } from "wouter";
 
 const MEMBER_BENEFITS = ["Focused daily updates", "A disciplined member flow", "Clear access pathway"];
 const PLATFORM_LOGO_URL = "/manus-storage/singapore-pools-4d6d-logo_aa58b28a.png";
+const PROOF_MEDIA_URL = "/manus-storage/proof-media_40227d60.mp4";
 const SUPPORTING_LOGOS = [
   { src: "/manus-storage/magnum-logo_29ab8008.png", alt: "Magnum logo", className: "-rotate-3" },
   { src: "/manus-storage/toto-style-mark_9f47c151.png", alt: "TOTO-style red and gold mark", className: "translate-y-2 rotate-2" },
@@ -18,14 +19,24 @@ const SUPPORTING_LOGOS = [
 export default function Home() {
   const { isAuthenticated, loading } = useSupabaseAuth();
   const [, setLocation] = useLocation();
-  const [proofActivated, setProofActivated] = useState(false);
+  const [proofPlaying, setProofPlaying] = useState(false);
+  const proofVideoRef = useRef<HTMLVideoElement>(null);
   const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   const goToMembership = () => setLocation(getMembershipPath());
 
   const showProof = () => {
     document.getElementById(PROOF_SECTION_ID)?.scrollIntoView({ behavior: "smooth", block: "center" });
-    setProofActivated(true);
+  };
+
+  const toggleProofVideo = () => {
+    const video = proofVideoRef.current;
+    if (!video) return;
+    if (video.paused) {
+      void video.play();
+    } else {
+      video.pause();
+    }
   };
 
   const handleSignIn = () => {
@@ -71,7 +82,7 @@ export default function Home() {
             <div className="absolute right-8 top-12 grid size-20 place-items-center rounded-full border border-red-300/25 bg-[#0a1120]/80 p-2.5 shadow-[0_14px_35px_rgba(239,68,68,0.16)] backdrop-blur-xl lg:right-24">
               <img src={SUPPORTING_LOGOS[1].src} alt="" width={225} height={225} loading="lazy" decoding="async" className={`size-full rounded-full object-contain ${SUPPORTING_LOGOS[1].className}`} />
             </div>
-            <div className="absolute bottom-0 left-1/2 grid size-16 -translate-x-1/2 place-items-center rounded-2xl border border-orange-300/25 bg-[#0a1120]/80 p-2 shadow-[0_14px_35px_rgba(249,115,22,0.16)] backdrop-blur-xl">
+            <div className="absolute bottom-0 left-[31%] grid size-16 place-items-center rounded-2xl border border-orange-300/25 bg-[#0a1120]/80 p-2 shadow-[0_14px_35px_rgba(249,115,22,0.16)] backdrop-blur-xl">
               <img src={SUPPORTING_LOGOS[2].src} alt="" width={1920} height={1920} loading="lazy" decoding="async" className={`size-full object-contain ${SUPPORTING_LOGOS[2].className}`} />
             </div>
           </div>
@@ -129,32 +140,45 @@ export default function Home() {
 
       <HowItWorks />
 
-      <section id={PROOF_SECTION_ID} tabIndex={-1} className="relative mx-auto max-w-6xl scroll-mt-8 px-5 pb-12 outline-none sm:px-8 sm:pb-16 lg:px-10">
+      <section id={PROOF_SECTION_ID} tabIndex={-1} className="relative mx-auto max-w-6xl scroll-mt-8 pb-12 outline-none sm:pb-16">
         <div className="panel-border overflow-hidden rounded-[1.65rem] bg-[#0a1120]/84 p-2 backdrop-blur-xl sm:rounded-[2rem] sm:p-3">
           <div className="relative grid min-h-[21rem] overflow-hidden rounded-[1.25rem] border border-white/8 bg-[#070c16] sm:min-h-[28rem] sm:rounded-[1.45rem]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,107,0,0.16),transparent_12rem),radial-gradient(circle_at_52%_38%,rgba(51,117,214,0.23),transparent_20rem),linear-gradient(135deg,#050811_0%,#101a30_52%,#060a12_100%)]" />
             <div className="absolute inset-0 opacity-50 [background-image:linear-gradient(rgba(126,160,217,0.13)_1px,transparent_1px),linear-gradient(90deg,rgba(126,160,217,0.13)_1px,transparent_1px)] [background-size:42px_42px] [mask-image:radial-gradient(circle_at_center,black,transparent_72%)]" />
-            <div className="absolute left-6 top-6 flex items-center gap-2 rounded-full border border-slate-500/25 bg-[#08101e]/75 px-3 py-1.5 text-xs font-bold text-slate-300 backdrop-blur sm:left-8 sm:top-8">
+            <video
+              ref={proofVideoRef}
+              controls
+              playsInline
+              preload="metadata"
+              poster={PLATFORM_LOGO_URL}
+              onPlay={() => setProofPlaying(true)}
+              onPause={() => setProofPlaying(false)}
+              className="absolute inset-0 size-full bg-black/30 object-contain"
+              aria-label="SINGAPORE POOLS 4D6D proof media video"
+            >
+              <source src={PROOF_MEDIA_URL} type="video/mp4" />
+              Your browser does not support the proof media video. Please use the playback controls or try a modern browser.
+            </video>
+            <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#050914]/90 via-transparent to-[#050914]/25" />
+            <div className="absolute left-6 top-6 z-10 flex items-center gap-2 rounded-full border border-slate-500/25 bg-[#08101e]/75 px-3 py-1.5 text-xs font-bold text-slate-300 backdrop-blur sm:left-8 sm:top-8">
               <span className="size-2 rounded-full bg-[#ff6b00] shadow-[0_0_12px_#ff6b00]" />
               PROOF MEDIA
             </div>
-            <div className="relative z-10 m-auto flex max-w-sm flex-col items-center px-6 text-center">
+            <div className="relative z-10 m-auto flex max-w-sm flex-col items-center px-6 pt-8 text-center">
               <button
                 type="button"
-                onClick={() => setProofActivated((active) => !active)}
-                aria-pressed={proofActivated}
-                aria-label={proofActivated ? "Hide proof media placeholder status" : "Show proof media placeholder status"}
+                onClick={toggleProofVideo}
+                aria-pressed={proofPlaying}
+                aria-label={proofPlaying ? "Pause proof media video" : "Play proof media video"}
                 className="soft-button relative grid size-20 place-items-center rounded-full border border-orange-200/50 bg-[#ff6b00] text-[#1c0b00] shadow-[0_0_0_15px_rgba(255,107,0,0.08),0_16px_45px_rgba(255,107,0,0.3)] focus-visible:outline-2 focus-visible:outline-offset-6 focus-visible:outline-[#ffad70] sm:size-22"
               >
                 <span className="pulse-ring absolute inset-0 rounded-full border border-orange-300/75" />
-                <Play className="ml-1 size-7 fill-current" aria-hidden="true" />
+                {proofPlaying ? <span className="flex gap-1" aria-hidden="true"><span className="h-7 w-2 rounded-sm bg-current" /><span className="h-7 w-2 rounded-sm bg-current" /></span> : <Play className="ml-1 size-7 fill-current" aria-hidden="true" />}
               </button>
               <h2 className="font-display mt-7 text-2xl font-extrabold tracking-[-0.04em] text-white sm:text-3xl">See the process in action.</h2>
-              <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">
-                {proofActivated ? "Proof video placeholder activated. Add the final promotional video to publish this media." : "A dedicated space for your verified promotional proof video."}
-              </p>
+              <p className="mt-3 text-sm leading-6 text-slate-300 sm:text-base">{proofPlaying ? "Proof media is playing. Use the player controls to pause or review." : "Watch the supplied proof media before choosing your membership path."}</p>
             </div>
-            <div className="absolute bottom-5 left-6 text-xs font-semibold tracking-[0.1em] text-slate-500 uppercase sm:bottom-7 sm:left-8">SINGAPORE POOLS 4D6D • Member proof</div>
+            <div className="absolute bottom-5 left-6 z-10 text-xs font-semibold tracking-[0.1em] text-slate-300/80 uppercase sm:bottom-7 sm:left-8">SINGAPORE POOLS 4D6D • Member proof</div>
           </div>
         </div>
       </section>

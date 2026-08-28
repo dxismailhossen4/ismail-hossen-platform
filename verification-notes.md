@@ -43,3 +43,11 @@ The user-supplied 225×225 4D/TOTO logo was uploaded to project-scoped storage a
 ## Home separated logo cluster
 
 The supplied Magnum, TOTO-style red/gold mark, and cleaned Nine Lotto mark were added as separated decorative visuals around the central home hero logo. At desktop width, Magnum sits left, the TOTO-style mark sits right, and Nine Lotto sits below the central mark; at mobile width, the three supporting marks appear as distinct compact cards beneath the main logo. The main SINGAPORE POOLS 4D6D wordmark, 1st Direct Win 1000% headline, and membership CTAs remain visible and readable. Nine Lotto uses the generated crop with the original lower “NINELOTTO / 9lotto-4d.com” text removed.
+
+## Corrected separated logo cluster
+
+After review, the cleaned Nine Lotto mark was moved from the center-bottom slot to a distinct lower-left desktop position so it no longer sits behind or touches the central 4D/TOTO hero logo. The corrected desktop preview shows Magnum at left, Nine Lotto left-of-center below, and the red/gold TOTO-style mark at right. The mobile row remains compact and separated with all three marks visible beneath the central logo. The SINGAPORE POOLS 4D6D wordmark, headline, and CTAs remain unobstructed in both layouts.
+
+## Supplied proof-media video
+
+The supplied MP4 is now rendered in the home-page PROOF MEDIA section with native browser controls, playsInline behavior, metadata preload, a SINGAPORE POOLS 4D6D poster, accessible video label, custom play/pause control, and a browser fallback message. Desktop and mobile full-page previews show the video player within the existing dark proof panel; the proof label, player controls, explanatory copy, membership CTA, social/contact panel, and responsible-use footer remain readable and responsive. The video was stored in project-scoped web storage at /manus-storage/proof-media_40227d60.mp4.
