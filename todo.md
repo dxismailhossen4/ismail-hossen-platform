@@ -88,4 +88,5 @@
 - [x] Save a new WebDev checkpoint after the home-page 4D/TOTO logo enhancement and mention first-viewport logo visibility, desktop/mobile validation, GitHub commit 4dd5efd, and Supabase release home-4d-toto-logo in the summary.
 - [x] Prepare the supplied Magnum, TOTO-style, Nine Lotto, and 4D/6D logo assets for web use, cropping only the Nine Lotto bottom text strip as requested.
 - [x] Add the logos to the home page as a separated, responsive visual composition that supports recognition without crowding the SINGAPORE POOLS 4D6D brand, headline, or CTAs.
-- [ ] Validate the cropped asset and desktop/mobile composition, add focused checks where appropriate, synchronize to GitHub and Supabase, and save a checkpoint.
+- [x] Validate the cropped asset and desktop/mobile composition, add focused checks where appropriate, and synchronize to GitHub and Supabase; the post-cluster checkpoint is tracked separately below.
+- [ ] Save a new WebDev checkpoint after the separated Magnum, TOTO-style, and cleaned Nine Lotto logo cluster, including the desktop/mobile findings, GitHub commit 5a51813, and Supabase release home-logo-cluster.
