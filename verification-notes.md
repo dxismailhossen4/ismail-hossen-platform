@@ -59,3 +59,7 @@ The PROOF MEDIA section now uses a responsive two-card composition. The supplied
 ## Daily photo upload and replacement controls
 
 The administrator site-content route now contains the daily-photo manager with a visible Upload photo or Choose replacement control, local image preview, Publish photo or Replace current photo action, JPG/PNG/WEBP validation, a 5 MB limit, loading feedback, and success/error messaging. The public home page reads the persisted daily-photo record through the restricted get_daily_photo RPC and continues to show the no-photo empty state until an administrator publishes an image. Desktop public and protected-route previews remain readable; the protected route correctly shows the sign-in gate when no authenticated admin session is available.
+
+## Supplied image sizing review
+
+The available 1536×1024 PNG is approximately 1.8 MB and already fits the daily-photo uploader’s 5 MiB hard limit and the recommended 1–2 MB web range, but its visible content is a payment-channel graphic rather than a daily proof photo. The available 1534×640 PNG is a Google administrator sign-in screenshot and should not be published as daily photo content. No image was resized or published automatically because the inspected assets do not clearly represent the intended daily proof photo.
