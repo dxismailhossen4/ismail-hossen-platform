@@ -40,7 +40,7 @@ const PAGE_CONTENT: Record<PublicPageKey, PageContent> = {
     ], cta: { label: "Continue to membership", path: "/membership" },
   },
   about: {
-    eyebrow: "About the platform", title: "Designed for clarity, not noise.", intro: "Ismail Hossen is structured around disciplined publishing, clear account access, and an honest distinction between information, records, and outcomes.",
+    eyebrow: "About the platform", title: "Designed for clarity, not noise.", intro: "SINGAPORE POOLS 4D6D is structured around disciplined publishing, clear account access, and an honest distinction between information, records, and outcomes.",
     blocks: [
       { title: "Focused process", body: "The information architecture keeps public content, member content, payment records, and administrative work in their own appropriate spaces.", icon: "check" },
       { title: "Transparent positioning", body: "Performance and historical information should be shown with proper context and never framed as a guaranteed future result.", icon: "shield" },

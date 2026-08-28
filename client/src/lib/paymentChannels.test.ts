@@ -18,4 +18,9 @@ describe("payment channel configuration", () => {
   it("keeps bKash, Nagad, and bank transfer available as separate checkout choices", () => {
     expect(PAYMENT_CHANNELS.filter((channel) => channel.available)).toHaveLength(3);
   });
+
+  it("provides visual identity metadata for every payment choice", () => {
+    expect(PAYMENT_CHANNELS.map((channel) => channel.localLabel)).toEqual(["বিকাশ", "নগদ", "Maybank"]);
+    expect(PAYMENT_CHANNELS.every((channel) => channel.logoUrl.startsWith("/manus-storage/") && channel.logoAlt.endsWith("logo"))).toBe(true);
+  });
 });

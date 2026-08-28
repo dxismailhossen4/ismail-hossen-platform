@@ -15,3 +15,7 @@ Social-contact validation: desktop captures of `/` and `/contact` show the share
 External destination validation: the Facebook URL resolves to the supplied profile ID and public page title `Probashi Voice Malaysia Singapore`; the Instagram URL routes to the requested `mdismail90154` destination (Instagram requires login for this browser); and both `wa.me` links resolve to WhatsApp chat pages showing +880 1863-211541 and +880 1341-926364 respectively. No message was sent.
 
 Final mobile Contact-page check confirms the WhatsApp / IMO panel remains readable and correctly stacked, with Facebook and Instagram buttons and both clickable contact cards visible above the footer.
+
+## Payment-channel logo enhancement
+
+The authenticated checkout now presents uploaded bKash, Nagad, and Maybank logo assets with Bengali-friendly labels, distinct selected states, and the existing real recipient details. Focused configuration coverage and the full suite passed with 22 tests; TypeScript validation passed. A mobile `/checkout` preview confirms the privacy-preserving sign-in gate remains readable and responsive. The logo cards themselves require a real authenticated Supabase session for visual inspection; no fake session was created because signup remained rate-limited.

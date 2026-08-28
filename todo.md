@@ -65,3 +65,11 @@
 - [x] Add the supplied Facebook Official profile and Instagram @mdismail90154 links to the platform’s social navigation/contact surfaces.
 - [x] Add a responsive WhatsApp / IMO contact area listing +8801863211541 and +8801341926364 with working wa.me links.
 - [x] Add focused tests for the social/contact link configuration and verify desktop/mobile rendering, then synchronize the completed update to Supabase and GitHub.
+- [ ] Create and validate a reusable Manus skill that captures the platform workflow: requirement intake, dark premium public UI, Supabase Auth/RLS, manual payment verification, proof uploads, responsive checks, testing, GitHub/Supabase synchronization, and checkpoint delivery.
+- [ ] Replace the current public branding text with “SINGAPORE POLS TOTO 4D6D” while preserving the premium dark navy/orange visual system and responsible-use language.
+- [ ] Run skill validation, website tests/type checks, responsive preview verification, synchronize the branding update to GitHub and Supabase, and deliver the reusable skill package plus website checkpoint.
+- [ ] Use the exact final brand spelling “SINGAPORE POOLS 4D6D” across the website branding and reusable workflow examples; keep Ismail Hossen only where it is an owner or payment-recipient identity.
+- [ ] Apply the confirmed final public brand name “SINGAPORE POOLS 4D6D” consistently across all visible website branding and keep the owner identity separate.
+- [ ] Replace the old brand name everywhere it appears in public, member, owner, administrator, accessibility, metadata, and project-facing labels with the exact name “SINGAPORE POOLS 4D6D,” while preserving historical release descriptions only when required for audit context.
+- [x] Redesign the authenticated checkout payment-channel selector using the supplied visual reference: prominent bKash, Nagad, and Maybank logo treatments, Bengali-friendly labels, distinct channel cards, and mobile-first selection states while preserving the real configured payment details.
+- [ ] Validate the logo-led checkout selector with focused tests, desktop/mobile previews, and payment-data checks, then synchronize the release to GitHub and Supabase and save a checkpoint.

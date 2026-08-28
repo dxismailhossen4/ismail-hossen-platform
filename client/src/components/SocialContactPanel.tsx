@@ -31,7 +31,7 @@ export default function SocialContactPanel() {
                   target="_blank"
                   rel="noreferrer"
                   className="soft-button inline-flex min-h-10 items-center gap-2 rounded-xl border border-slate-600/60 bg-slate-950/30 px-3.5 py-2 text-sm font-bold text-slate-200 hover:border-orange-300/60 hover:bg-orange-400/10 hover:text-orange-100 focus-visible:outline-2 focus-visible:outline-offset-3 focus-visible:outline-[#ff8a3d]"
-                  aria-label={`Open Ismail Hossen ${link.label} ${link.handle} in a new tab`}
+                  aria-label={`Open SINGAPORE POOLS 4D6D ${link.label} ${link.handle} in a new tab`}
                 >
                   <Icon className="size-4 text-orange-300" aria-hidden="true" />
                   <span>{link.label}</span>

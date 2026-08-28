@@ -30,9 +30,9 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
           type="button"
           onClick={() => goTo("/")}
           className="font-display text-lg font-extrabold tracking-[-0.04em] text-white focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ff8a3d] sm:text-xl"
-          aria-label="Go to Ismail Hossen home"
+          aria-label="Go to SINGAPORE POOLS 4D6D home"
         >
-          Ismail Hossen<span className="text-[#ff6b00]">.</span>
+          SINGAPORE POOLS 4D6D<span className="text-[#ff6b00]">.</span>
         </button>
 
         <nav className="hidden items-center gap-1 lg:flex" aria-label="Public navigation">
@@ -75,7 +75,7 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       <footer className="relative mt-4 border-t border-slate-700/40 bg-[#050914]/45 px-5 py-9 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-7 sm:grid-cols-[1fr_auto] sm:items-end">
           <div>
-            <p className="font-display font-bold tracking-[-0.03em] text-slate-200">Ismail Hossen<span className="text-[#ff6b00]">.</span></p>
+            <p className="font-display font-bold tracking-[-0.03em] text-slate-200">SINGAPORE POOLS 4D6D<span className="text-[#ff6b00]">.</span></p>
             <p className="mt-2 max-w-xl text-sm leading-6 text-slate-400"><strong className="font-bold text-slate-200">Responsible use:</strong> Content is informational only. Outcomes are not guaranteed, and past results do not predict future results.</p>
           </div>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-sm font-semibold text-slate-400 sm:justify-end" aria-label="Footer navigation">
