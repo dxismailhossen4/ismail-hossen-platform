@@ -104,3 +104,7 @@
 - [x] Add an admin/owner-only Upload photo control to the Daily Photo Post card with image validation and replacement support.
 - [x] Store the selected daily photo through the project’s secure storage flow and show the current image or no-photo empty state to public visitors.
 - [x] Add focused tests and responsive verification for daily-photo upload/replacement behavior, synchronize GitHub/Supabase, and save a checkpoint.
+
+- [x] Prepare the most suitable supplied 4D results image for the daily-photo slot at a web-friendly size and compression level.
+- [x] Publish the prepared daily photo through the project-scoped storage/metadata flow and verify it renders on the public home page.
+- [x] Record the final dimensions and file size, synchronize the asset decision to GitHub/Supabase, and save a checkpoint.
