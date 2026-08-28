@@ -63,3 +63,7 @@ The administrator site-content route now contains the daily-photo manager with a
 ## Supplied image sizing review
 
 The available 1536×1024 PNG is approximately 1.8 MB and already fits the daily-photo uploader’s 5 MiB hard limit and the recommended 1–2 MB web range, but its visible content is a payment-channel graphic rather than a daily proof photo. The available 1534×640 PNG is a Google administrator sign-in screenshot and should not be published as daily photo content. No image was resized or published automatically because the inspected assets do not clearly represent the intended daily proof photo.
+
+## Published daily photo asset
+
+The selected supplied ALL 4D Draw Results image was prepared without upscaling at 854×480 pixels, converted to optimized progressive JPEG, and compressed to 45,530 bytes (approximately 44.5 KiB). It was uploaded to project-scoped storage and published as the current daily photo through the Supabase daily_photo metadata record. Desktop and 390px mobile home previews show the image inside the Daily Photo Post card, with the existing PROOF MEDIA video, daily photo label, replacement-ready composition, membership CTA, social contacts, and responsible-use footer remaining readable.
