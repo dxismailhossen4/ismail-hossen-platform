@@ -84,4 +84,5 @@
 - [x] Validate the section on desktop/mobile, add focused tests where appropriate, synchronize it to GitHub/Supabase, and save a checkpoint.
 - [x] Save a new WebDev checkpoint after the How it works section update and mention the four-step section plus desktop/mobile validation in the checkpoint summary and verification notes.
 - [x] Add the user-supplied 4D/TOTO logo image to the project-scoped static asset storage and place it prominently in the home-page first viewport without obscuring the SINGAPORE POOLS 4D6D brand or CTA.
-- [ ] Validate the logo’s desktop/mobile visibility, accessible alternative text, and responsive composition, then synchronize the asset/code release to GitHub and Supabase and save a checkpoint.
+- [x] Validate the logo’s desktop/mobile visibility, accessible alternative text, and responsive composition, then synchronize the asset/code release to GitHub and Supabase and save a checkpoint.
+- [ ] Save a new WebDev checkpoint after the home-page 4D/TOTO logo enhancement and mention first-viewport logo visibility, desktop/mobile validation, GitHub commit 4dd5efd, and Supabase release home-4d-toto-logo in the summary.
