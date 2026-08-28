@@ -67,3 +67,7 @@ The available 1536×1024 PNG is approximately 1.8 MB and already fits the daily-
 ## Published daily photo asset
 
 The selected supplied ALL 4D Draw Results image was prepared without upscaling at 854×480 pixels, converted to optimized progressive JPEG, and compressed to 45,530 bytes (approximately 44.5 KiB). It was uploaded to project-scoped storage and published as the current daily photo through the Supabase daily_photo metadata record. Desktop and 390px mobile home previews show the image inside the Daily Photo Post card, with the existing PROOF MEDIA video, daily photo label, replacement-ready composition, membership CTA, social contacts, and responsible-use footer remaining readable.
+
+## Maybank session status follow-up
+
+The live checkout route was reopened after the user’s confirmation, but the current browser session still shows the protected “Sign in before payment submission” gate. No authenticated Maybank details were inspected or submitted, so the inherited verification item remains pending and separate from the completed daily-photo publication.
