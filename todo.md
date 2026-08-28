@@ -62,3 +62,6 @@
 - [ ] Verify the authenticated checkout payment-channel presentation in a real session before final delivery, including active Maybank details and bank-specific reference label.
 - [x] Update the authenticated checkout intro copy to mention Maybank alongside bKash and Nagad, then rerun tests and synchronize the correction.
 - [x] Commit and push the Maybank checkout-copy correction, then verify the remote reflects the updated Checkout.tsx text before final checkpointing.
+- [x] Add the supplied Facebook Official profile and Instagram @mdismail90154 links to the platform’s social navigation/contact surfaces.
+- [x] Add a responsive WhatsApp / IMO contact area listing +8801863211541 and +8801341926364 with working wa.me links.
+- [ ] Add focused tests for the social/contact link configuration and verify desktop/mobile rendering, then synchronize the completed update to Supabase and GitHub.

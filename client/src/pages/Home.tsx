@@ -1,3 +1,4 @@
+import SocialContactPanel from "@/components/SocialContactPanel";
 import { useSupabaseAuth } from "@/contexts/SupabaseAuthContext";
 import { getMembershipPath, PROOF_SECTION_ID } from "@/lib/membership";
 import { PUBLIC_NAV_ITEMS } from "@/lib/navigation";
@@ -141,6 +142,8 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      <SocialContactPanel />
 
       <footer className="relative border-t border-slate-700/40 bg-[#050914]/45 px-5 py-8 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-5 text-sm leading-6 text-slate-400 sm:grid-cols-[auto_1fr] sm:gap-8"><p className="font-display font-bold tracking-[-0.03em] text-slate-200">Ismail Hossen<span className="text-[#ff6b00]">.</span></p><div className="sm:justify-self-end sm:text-right"><p className="max-w-3xl"><strong className="font-bold text-slate-200">Responsible use:</strong> Membership content is informational only. Outcomes are not guaranteed, past results do not predict future results, and you should participate only within your own limits.</p><div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-xs font-bold text-slate-500 sm:justify-end">{PUBLIC_NAV_ITEMS.slice(5).map((item) => <button type="button" key={item.path} onClick={() => setLocation(item.path)} className="soft-button hover:text-orange-200 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#ff8a3d]">{item.label}</button>)}</div></div></div>

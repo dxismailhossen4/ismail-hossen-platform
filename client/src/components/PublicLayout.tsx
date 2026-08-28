@@ -1,3 +1,4 @@
+import SocialContactPanel from "@/components/SocialContactPanel";
 import { useSupabaseAuth } from "@/contexts/SupabaseAuthContext";
 import { FOOTER_NAV_ITEMS, PUBLIC_NAV_ITEMS } from "@/lib/navigation";
 import { ArrowRight, Menu, UserRound, X } from "lucide-react";
@@ -68,6 +69,8 @@ export default function PublicLayout({ children }: { children: React.ReactNode }
       </header>
 
       {children}
+
+      <SocialContactPanel />
 
       <footer className="relative mt-4 border-t border-slate-700/40 bg-[#050914]/45 px-5 py-9 sm:px-8 lg:px-10">
         <div className="mx-auto grid max-w-6xl gap-7 sm:grid-cols-[1fr_auto] sm:items-end">
