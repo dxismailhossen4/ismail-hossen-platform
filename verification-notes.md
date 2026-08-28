@@ -71,3 +71,13 @@ The selected supplied ALL 4D Draw Results image was prepared without upscaling a
 ## Maybank session status follow-up
 
 The live checkout route was reopened after the user’s confirmation, but the current browser session still shows the protected “Sign in before payment submission” gate. No authenticated Maybank details were inspected or submitted, so the inherited verification item remains pending and separate from the completed daily-photo publication.
+
+## Authenticated checkout session restored
+
+The browser session is now authenticated as the signed-in account and the protected checkout form is accessible. The checkout shows bKash selected by default, with bKash, Nagad, and Maybank channel controls visible. No payment reference, proof image, or confirmation checkbox was entered.
+
+The authenticated browser session remains active after a route refresh, showing My Account on the public header. A stale checkout element required a fresh DOM snapshot; no payment action was performed.
+
+## Authenticated Maybank checkout verification
+
+In the authenticated checkout session, selecting Maybank displayed the Bank Account category, beneficiary/account holder IMON KHAN, Maybank account number 5140 1212 2490, and three bank-transfer instructions: open a bank transfer service and select Maybank as the receiving bank; transfer the approved membership amount to the displayed account number; and save the bank transfer reference and upload a readable proof screenshot. The required reference field is labeled “Maybank transfer reference,” with helper text instructing the user to use the transaction or transfer reference from the completed payment. The proof control is labeled “Payment proof screenshot” / “Choose screenshot,” accepting JPG, PNG, or WEBP up to 3.0 MB. No reference, proof, acknowledgement, or submission was entered.

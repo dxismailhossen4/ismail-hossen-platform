@@ -78,7 +78,7 @@
 - [x] Update the release notes and checkpoint summary to explicitly state the branding surfaces reviewed while keeping the authenticated checkout live-session item separate if it remains blocked.
 - [x] Capture mobile previews of the renamed “SINGAPORE POOLS 4D6D” branding on public pages and explicitly scope protected account/admin captures to their sign-in entry states when no real session is available.
 - [x] Save a new WebDev checkpoint after the branding-preview notes and include the reviewed surfaces in its summary while keeping authenticated checkout verification separate.
-- [ ] In a real authenticated checkout session, inspect and document the Maybank beneficiary details, bank-transfer instructions, and bank-specific reference field/label; the user has currently confirmed only that the logo cards display correctly.
+- [x] In a real authenticated checkout session, inspect and document the Maybank beneficiary details, bank-transfer instructions, and bank-specific reference field/label; the user has currently confirmed only that the logo cards display correctly.
 - [x] Compare the supplied wide reference image with the current public home layout and document whether a four-step “How it works” section already exists.
 - [x] Add a responsive structural “How it works” section with four visible steps—Explore free tips, Create account, Choose membership, and Access after verification—without inventing deeper content or new business logic.
 - [x] Validate the section on desktop/mobile, add focused tests where appropriate, synchronize it to GitHub/Supabase, and save a checkpoint.
