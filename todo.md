@@ -82,4 +82,4 @@
 - [x] Compare the supplied wide reference image with the current public home layout and document whether a four-step “How it works” section already exists.
 - [x] Add a responsive structural “How it works” section with four visible steps—Explore free tips, Create account, Choose membership, and Access after verification—without inventing deeper content or new business logic.
 - [x] Validate the section on desktop/mobile, add focused tests where appropriate, synchronize it to GitHub/Supabase, and save a checkpoint.
-- [ ] Save a new WebDev checkpoint after the How it works section update and mention the four-step section plus desktop/mobile validation in the checkpoint summary and verification notes.
+- [x] Save a new WebDev checkpoint after the How it works section update and mention the four-step section plus desktop/mobile validation in the checkpoint summary and verification notes.
