@@ -92,11 +92,11 @@
 - [x] Save a new WebDev checkpoint after the separated Magnum, TOTO-style, and cleaned Nine Lotto logo cluster, including the desktop/mobile findings, GitHub commit 5a51813, and Supabase release home-logo-cluster.
 - [x] Reposition the cleaned Nine Lotto decorative mark so it is clearly visible and separated from the central hero logo on desktop, while preserving the compact three-mark arrangement on mobile.
 - [x] Re-run tests and desktop/mobile previews after the repositioning and update verification notes; the follow-up checkpoint is tracked separately below.
-- [ ] Save a follow-up WebDev checkpoint for the corrected Nine Lotto positioning and mention the desktop/mobile revalidation in its summary.
+- [x] Save a follow-up WebDev checkpoint for the corrected Nine Lotto positioning and mention the desktop/mobile revalidation in its summary.
 - [x] Upload the supplied PROOF MEDIA video to project-scoped web storage and integrate it into the existing home-page proof section without storing media bytes in the database or repository.
 - [x] Add accessible video playback, poster/fallback, and responsive sizing while preserving the existing proof-media label and responsible-use messaging.
-- [ ] Validate the video asset and playback presentation, run tests/type checks, synchronize the release to GitHub and Supabase, and save a checkpoint.
+- [x] Validate the video asset and playback presentation, run tests/type checks, synchronize the release to GitHub and Supabase, and save a checkpoint.
 
 - [x] Add a dedicated daily photo/post area beside the existing PROOF MEDIA video section without requiring an image asset yet.
 - [x] Design an accessible empty state for the daily photo area that clearly indicates where the next daily image will appear.
-- [ ] Validate the responsive video-plus-photo media layout, update tests/verification notes, synchronize to GitHub and Supabase, and save a checkpoint.
+- [x] Validate the responsive video-plus-photo media layout, update tests/verification notes, synchronize to GitHub and Supabase, and save a checkpoint.
