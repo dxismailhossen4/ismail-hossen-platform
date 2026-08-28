@@ -2,8 +2,9 @@ import HowItWorks from "@/components/HowItWorks";
 import SocialContactPanel from "@/components/SocialContactPanel";
 import { useSupabaseAuth } from "@/contexts/SupabaseAuthContext";
 import { getMembershipPath, PROOF_SECTION_ID } from "@/lib/membership";
+import { DAILY_PHOTO_EMPTY_STATE } from "@/lib/dailyMedia";
 import { PUBLIC_NAV_ITEMS } from "@/lib/navigation";
-import { ArrowRight, Check, CirclePlay, LockKeyhole, Menu, Play, Sparkles, UserRound, X } from "lucide-react";
+import { ArrowRight, CalendarDays, Check, CirclePlay, ImageIcon, LockKeyhole, Menu, Play, Sparkles, UserRound, X } from "lucide-react";
 import { useRef, useState } from "react";
 import { useLocation } from "wouter";
 
@@ -141,7 +142,8 @@ export default function Home() {
       <HowItWorks />
 
       <section id={PROOF_SECTION_ID} tabIndex={-1} className="relative mx-auto max-w-6xl scroll-mt-8 pb-12 outline-none sm:pb-16">
-        <div className="panel-border overflow-hidden rounded-[1.65rem] bg-[#0a1120]/84 p-2 backdrop-blur-xl sm:rounded-[2rem] sm:p-3">
+        <div className="grid gap-5 lg:grid-cols-[1.25fr_0.75fr]">
+          <div className="panel-border overflow-hidden rounded-[1.65rem] bg-[#0a1120]/84 p-2 backdrop-blur-xl sm:rounded-[2rem] sm:p-3">
           <div className="relative grid min-h-[21rem] overflow-hidden rounded-[1.25rem] border border-white/8 bg-[#070c16] sm:min-h-[28rem] sm:rounded-[1.45rem]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,107,0,0.16),transparent_12rem),radial-gradient(circle_at_52%_38%,rgba(51,117,214,0.23),transparent_20rem),linear-gradient(135deg,#050811_0%,#101a30_52%,#060a12_100%)]" />
             <div className="absolute inset-0 opacity-50 [background-image:linear-gradient(rgba(126,160,217,0.13)_1px,transparent_1px),linear-gradient(90deg,rgba(126,160,217,0.13)_1px,transparent_1px)] [background-size:42px_42px] [mask-image:radial-gradient(circle_at_center,black,transparent_72%)]" />
@@ -180,6 +182,29 @@ export default function Home() {
             </div>
             <div className="absolute bottom-5 left-6 z-10 text-xs font-semibold tracking-[0.1em] text-slate-300/80 uppercase sm:bottom-7 sm:left-8">SINGAPORE POOLS 4D6D • Member proof</div>
           </div>
+          </div>
+
+          <aside aria-labelledby="daily-photo-title" className="panel-border flex min-h-[21rem] flex-col overflow-hidden rounded-[1.65rem] bg-[#0a1120]/84 p-2 backdrop-blur-xl sm:min-h-[28rem] sm:rounded-[2rem] sm:p-3">
+            <div className="relative flex flex-1 flex-col overflow-hidden rounded-[1.25rem] border border-white/8 bg-[#070c16] p-6 sm:rounded-[1.45rem] sm:p-8">
+              <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_28%,rgba(255,107,0,0.14),transparent_12rem),linear-gradient(145deg,#101a30_0%,#070c16_70%)]" />
+              <div className="relative z-10 flex items-center justify-between gap-3">
+                <div className="inline-flex items-center gap-2 rounded-full border border-slate-500/25 bg-[#08101e]/75 px-3 py-1.5 text-xs font-bold text-slate-300 backdrop-blur">
+                  <span className="size-2 rounded-full bg-[#ff6b00] shadow-[0_0_12px_#ff6b00]" />
+                  DAILY PHOTO
+                </div>
+                <CalendarDays className="size-5 text-orange-300" aria-hidden="true" />
+              </div>
+              <div className="relative z-10 m-auto w-full text-center">
+                <div className="mx-auto grid size-20 place-items-center rounded-2xl border border-dashed border-orange-300/35 bg-orange-400/[0.07] text-orange-200 shadow-[0_0_0_10px_rgba(255,107,0,0.04)] sm:size-24">
+                  <ImageIcon className="size-9 sm:size-10" aria-hidden="true" />
+                </div>
+                <h2 id="daily-photo-title" className="font-display mt-6 text-2xl font-extrabold tracking-[-0.04em] text-white">{DAILY_PHOTO_EMPTY_STATE.title}</h2>
+                <p className="mx-auto mt-3 max-w-xs text-sm leading-6 text-slate-300">{DAILY_PHOTO_EMPTY_STATE.description}</p>
+                <div className="mt-6 inline-flex items-center rounded-full border border-white/10 bg-white/[0.035] px-3 py-2 text-xs font-semibold text-slate-400">{DAILY_PHOTO_EMPTY_STATE.badge}</div>
+              </div>
+              <p className="relative z-10 mt-6 text-xs font-semibold tracking-[0.1em] text-slate-500 uppercase">SINGAPORE POOLS 4D6D • Daily update</p>
+            </div>
+          </aside>
         </div>
       </section>
 

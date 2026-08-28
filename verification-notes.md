@@ -51,3 +51,7 @@ After review, the cleaned Nine Lotto mark was moved from the center-bottom slot 
 ## Supplied proof-media video
 
 The supplied MP4 is now rendered in the home-page PROOF MEDIA section with native browser controls, playsInline behavior, metadata preload, a SINGAPORE POOLS 4D6D poster, accessible video label, custom play/pause control, and a browser fallback message. Desktop and mobile full-page previews show the video player within the existing dark proof panel; the proof label, player controls, explanatory copy, membership CTA, social/contact panel, and responsible-use footer remain readable and responsive. The video was stored in project-scoped web storage at /manus-storage/proof-media_40227d60.mp4.
+
+## Daily photo-post placeholder
+
+The PROOF MEDIA section now uses a responsive two-card composition. The supplied video remains on the left on desktop, while a dedicated Daily Photo Post card sits beside it with a calendar marker, image placeholder icon, and the intentional “No photo posted yet” state. At mobile width, the cards stack vertically without clipping; the empty state, video controls, membership CTA, social links, and responsible-use footer remain readable. No photo asset is stored or required yet, leaving this slot ready for the user’s future daily image.
