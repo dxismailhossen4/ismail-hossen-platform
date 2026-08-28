@@ -13,3 +13,5 @@ The corrected release record is now verified in Supabase as `maybank-checkout-co
 Social-contact validation: desktop captures of `/` and `/contact` show the shared WhatsApp / IMO panel with both supplied phone numbers, plus Facebook and Instagram buttons. Mobile captures at 390x844 show the contact cards stacking cleanly below the main content, with readable number labels, external-link buttons, and unchanged responsible-use messaging.
 
 External destination validation: the Facebook URL resolves to the supplied profile ID and public page title `Probashi Voice Malaysia Singapore`; the Instagram URL routes to the requested `mdismail90154` destination (Instagram requires login for this browser); and both `wa.me` links resolve to WhatsApp chat pages showing +880 1863-211541 and +880 1341-926364 respectively. No message was sent.
+
+Final mobile Contact-page check confirms the WhatsApp / IMO panel remains readable and correctly stacked, with Facebook and Instagram buttons and both clickable contact cards visible above the footer.
