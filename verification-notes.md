@@ -35,3 +35,7 @@ The user confirmed from a phone-authenticated session that the bKash, Nagad, and
 ## How it works structural section
 
 The supplied wide reference shows four numbered cards under “How it works”: Explore free tips, Create account, Choose membership, and Access after verification. The prior home page did not contain this section. A new responsive section was added between the hero and proof media, with four accessible step cards, matching dark navy/orange styling, and neutral descriptions limited to the existing membership flow. Full-page desktop and mobile previews confirm the cards are visible, readable, and stacked cleanly on narrow screens. The deeper step content and business logic remain intentionally unchanged for later definition.
+
+## Home-page 4D/TOTO logo enhancement
+
+The user-supplied 225×225 4D/TOTO logo was uploaded to project-scoped storage and placed above the hero label in the home-page first viewport. Desktop at 1280×720 and mobile at 390×844 both show the logo immediately on load, with the SINGAPORE POOLS 4D6D wordmark, headline, and membership CTAs remaining readable and unobstructed. The image has descriptive alternative text and is loaded with high priority for first-viewport visibility.

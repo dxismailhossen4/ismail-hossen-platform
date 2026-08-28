@@ -8,6 +8,7 @@ import { useState } from "react";
 import { useLocation } from "wouter";
 
 const MEMBER_BENEFITS = ["Focused daily updates", "A disciplined member flow", "Clear access pathway"];
+const PLATFORM_LOGO_URL = "/manus-storage/singapore-pools-4d6d-logo_aa58b28a.png";
 
 export default function Home() {
   const { isAuthenticated, loading } = useSupabaseAuth();
@@ -58,9 +59,14 @@ export default function Home() {
 
       <section className="relative mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-7xl place-items-center px-5 pb-16 pt-18 text-center sm:px-8 sm:pb-20 sm:pt-24 lg:px-10">
         <div className="relative max-w-4xl">
-          <div className="mx-auto mb-7 inline-flex items-center gap-2 rounded-full border border-orange-300/20 bg-orange-400/8 px-3.5 py-2 text-[0.68rem] font-extrabold tracking-[0.16em] text-orange-200 uppercase backdrop-blur-sm sm:mb-9">
+          <div className="mx-auto mb-6 flex flex-col items-center gap-4 sm:mb-8">
+            <div className="rounded-[1.65rem] border border-orange-300/35 bg-[#0a1120]/80 p-2 shadow-[0_0_0_8px_rgba(255,107,0,0.05),0_18px_42px_rgba(0,0,0,0.3)] backdrop-blur-xl">
+              <img src={PLATFORM_LOGO_URL} alt="SINGAPORE POOLS 4D6D 4D and TOTO logo" width={225} height={225} fetchPriority="high" decoding="async" className="size-24 rounded-2xl object-cover sm:size-28" />
+            </div>
+            <div className="inline-flex items-center gap-2 rounded-full border border-orange-300/20 bg-orange-400/8 px-3.5 py-2 text-[0.68rem] font-extrabold tracking-[0.16em] text-orange-200 uppercase backdrop-blur-sm">
             <Sparkles className="size-3.5 text-[#ff8b3d]" aria-hidden="true" />
-            Private membership experience
+              Private membership experience
+            </div>
           </div>
 
           <h1 className="font-display text-balance text-5xl font-extrabold tracking-[-0.065em] text-white sm:text-6xl md:text-7xl lg:text-[5.35rem] lg:leading-[0.98]">
