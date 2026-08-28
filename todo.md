@@ -86,3 +86,6 @@
 - [x] Add the user-supplied 4D/TOTO logo image to the project-scoped static asset storage and place it prominently in the home-page first viewport without obscuring the SINGAPORE POOLS 4D6D brand or CTA.
 - [x] Validate the logo’s desktop/mobile visibility, accessible alternative text, and responsive composition, then synchronize the asset/code release to GitHub and Supabase and save a checkpoint.
 - [x] Save a new WebDev checkpoint after the home-page 4D/TOTO logo enhancement and mention first-viewport logo visibility, desktop/mobile validation, GitHub commit 4dd5efd, and Supabase release home-4d-toto-logo in the summary.
+- [x] Prepare the supplied Magnum, TOTO-style, Nine Lotto, and 4D/6D logo assets for web use, cropping only the Nine Lotto bottom text strip as requested.
+- [x] Add the logos to the home page as a separated, responsive visual composition that supports recognition without crowding the SINGAPORE POOLS 4D6D brand, headline, or CTAs.
+- [ ] Validate the cropped asset and desktop/mobile composition, add focused checks where appropriate, synchronize to GitHub and Supabase, and save a checkpoint.

@@ -39,3 +39,7 @@ The supplied wide reference shows four numbered cards under “How it works”: 
 ## Home-page 4D/TOTO logo enhancement
 
 The user-supplied 225×225 4D/TOTO logo was uploaded to project-scoped storage and placed above the hero label in the home-page first viewport. Desktop at 1280×720 and mobile at 390×844 both show the logo immediately on load, with the SINGAPORE POOLS 4D6D wordmark, headline, and membership CTAs remaining readable and unobstructed. The image has descriptive alternative text and is loaded with high priority for first-viewport visibility.
+
+## Home separated logo cluster
+
+The supplied Magnum, TOTO-style red/gold mark, and cleaned Nine Lotto mark were added as separated decorative visuals around the central home hero logo. At desktop width, Magnum sits left, the TOTO-style mark sits right, and Nine Lotto sits below the central mark; at mobile width, the three supporting marks appear as distinct compact cards beneath the main logo. The main SINGAPORE POOLS 4D6D wordmark, 1st Direct Win 1000% headline, and membership CTAs remain visible and readable. Nine Lotto uses the generated crop with the original lower “NINELOTTO / 9lotto-4d.com” text removed.

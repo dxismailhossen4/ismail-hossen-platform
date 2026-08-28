@@ -9,6 +9,11 @@ import { useLocation } from "wouter";
 
 const MEMBER_BENEFITS = ["Focused daily updates", "A disciplined member flow", "Clear access pathway"];
 const PLATFORM_LOGO_URL = "/manus-storage/singapore-pools-4d6d-logo_aa58b28a.png";
+const SUPPORTING_LOGOS = [
+  { src: "/manus-storage/magnum-logo_29ab8008.png", alt: "Magnum logo", className: "-rotate-3" },
+  { src: "/manus-storage/toto-style-mark_9f47c151.png", alt: "TOTO-style red and gold mark", className: "translate-y-2 rotate-2" },
+  { src: "/manus-storage/nine-lotto-mark-clean_647d2236.png", alt: "Nine Lotto logo mark", className: "rotate-3" },
+];
 
 export default function Home() {
   const { isAuthenticated, loading } = useSupabaseAuth();
@@ -58,10 +63,26 @@ export default function Home() {
       </header>
 
       <section className="relative mx-auto grid min-h-[calc(100vh-5.5rem)] max-w-7xl place-items-center px-5 pb-16 pt-18 text-center sm:px-8 sm:pb-20 sm:pt-24 lg:px-10">
-        <div className="relative max-w-4xl">
-          <div className="mx-auto mb-6 flex flex-col items-center gap-4 sm:mb-8">
+        <div className="pointer-events-none absolute inset-x-0 top-24 hidden h-40 sm:block" aria-hidden="true">
+          <div className="relative mx-auto h-full max-w-6xl">
+            <div className="absolute left-6 top-3 grid size-20 place-items-center rounded-2xl border border-pink-300/25 bg-[#0a1120]/80 p-3 shadow-[0_14px_35px_rgba(236,72,153,0.16)] backdrop-blur-xl lg:left-16">
+              <img src={SUPPORTING_LOGOS[0].src} alt="" width={200} height={148} loading="lazy" decoding="async" className={`max-h-full max-w-full object-contain ${SUPPORTING_LOGOS[0].className}`} />
+            </div>
+            <div className="absolute right-8 top-12 grid size-20 place-items-center rounded-full border border-red-300/25 bg-[#0a1120]/80 p-2.5 shadow-[0_14px_35px_rgba(239,68,68,0.16)] backdrop-blur-xl lg:right-24">
+              <img src={SUPPORTING_LOGOS[1].src} alt="" width={225} height={225} loading="lazy" decoding="async" className={`size-full rounded-full object-contain ${SUPPORTING_LOGOS[1].className}`} />
+            </div>
+            <div className="absolute bottom-0 left-1/2 grid size-16 -translate-x-1/2 place-items-center rounded-2xl border border-orange-300/25 bg-[#0a1120]/80 p-2 shadow-[0_14px_35px_rgba(249,115,22,0.16)] backdrop-blur-xl">
+              <img src={SUPPORTING_LOGOS[2].src} alt="" width={1920} height={1920} loading="lazy" decoding="async" className={`size-full object-contain ${SUPPORTING_LOGOS[2].className}`} />
+            </div>
+          </div>
+        </div>
+        <div className="relative z-10 max-w-4xl">
+          <div className="mx-auto mb-5 flex flex-col items-center gap-3 sm:mb-8 sm:gap-4">
             <div className="rounded-[1.65rem] border border-orange-300/35 bg-[#0a1120]/80 p-2 shadow-[0_0_0_8px_rgba(255,107,0,0.05),0_18px_42px_rgba(0,0,0,0.3)] backdrop-blur-xl">
               <img src={PLATFORM_LOGO_URL} alt="SINGAPORE POOLS 4D6D 4D and TOTO logo" width={225} height={225} fetchPriority="high" decoding="async" className="size-24 rounded-2xl object-cover sm:size-28" />
+            </div>
+            <div className="flex items-center justify-center gap-2 sm:hidden" role="group" aria-label="Additional lottery brand marks">
+              {SUPPORTING_LOGOS.map((logo) => <span key={logo.src} className="grid size-12 place-items-center rounded-xl border border-white/10 bg-[#0a1120]/80 p-1.5 shadow-lg backdrop-blur-xl"><img src={logo.src} alt={logo.alt} width={225} height={225} loading="lazy" decoding="async" className={`size-full object-contain ${logo.className}`} /></span>)}
             </div>
             <div className="inline-flex items-center gap-2 rounded-full border border-orange-300/20 bg-orange-400/8 px-3.5 py-2 text-[0.68rem] font-extrabold tracking-[0.16em] text-orange-200 uppercase backdrop-blur-sm">
             <Sparkles className="size-3.5 text-[#ff8b3d]" aria-hidden="true" />
