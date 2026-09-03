@@ -87,3 +87,11 @@ In the authenticated checkout session, selecting Maybank displayed the Bank Acco
 The protected `/admin/payments` and `/admin/memberships` routes were captured at 1280×720. Both correctly show the secure sign-in gate when the preview session is not authenticated, confirming that the administrator dashboard remains protected from public access. The implemented dashboard code includes responsive KPI cards, status filters, search, live payment and membership queries, private proof preview, approval/request-information/rejection actions, and a handoff from membership overview to payment review. Full validation passed with 13 test files, 30 tests, and TypeScript checks.
 
 The same protected `/admin/payments` and `/admin/memberships` entry states were captured at 390×844. The private-access card, Sign In CTA, and Back to home escape route remain centered, readable, and unclipped on mobile. Internal dashboard records remain available only after authenticated administrator access.
+
+## 2026-09-03 — Demo payment, content-tier, and realtime account UI
+
+Desktop previews of `/admin/payments`, `/admin/memberships`, and `/account` remain protected by the sign-in gate when the preview session is not authenticated. The new admin UI is implemented behind these routes: the payment page includes a synthetic-only demo simulator, and the memberships page includes live membership status plus Free/Member/VIP rule controls. The account page includes a dismissible realtime-status notification banner; actual notification delivery requires an authenticated user and Supabase Realtime event.
+
+## 2026-09-03 — Demo simulator, tier permissions, and realtime notification preview
+
+Desktop captures of `/admin/payments`, `/admin/memberships`, and `/account` continue to show the secure sign-in gate when the preview session is unauthenticated. This confirms that the new demo simulator, content-tier controls, and realtime account notification banner remain behind protected routes. Automated validation passed with 15 test files, 34 tests, and TypeScript checks.

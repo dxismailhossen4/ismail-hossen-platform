@@ -114,3 +114,8 @@
 - [x] Add schema/RLS/workflow tests, responsive verification notes, GitHub/Supabase synchronization, and a final checkpoint for the dashboard release.
 
 - [x] Correct membership approval audit-event capture so activation versus extension and previous membership status are recorded accurately.
+
+- [x] Add an admin-only non-production demo payment simulator for Pending → Approve and Pending → Reject without inserting synthetic records into the real payments table.
+- [x] Add configurable Free, Member/Freemium Plus, and VIP content-access rules with administrator controls and server-side enforcement.
+- [x] Add user-scoped realtime payment-status updates and accessible success, rejection, and information-request notifications.
+- [ ] Add focused tests, responsive verification, audit notes, GitHub/Supabase synchronization, and a final checkpoint for the demo/permissions/realtime release.

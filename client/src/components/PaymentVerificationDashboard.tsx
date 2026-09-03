@@ -4,6 +4,7 @@ import { useSupabaseAuth } from "@/contexts/SupabaseAuthContext";
 import { paymentDecisionLabel, type PaymentDecision } from "@/lib/payment";
 import { adminPaymentStatusLabel, countActiveMemberships, filterAdminPayments, type AdminPaymentFilter, type AdminPaymentStatus } from "@/lib/adminDashboard";
 import { trpc } from "@/lib/trpc";
+import DemoPaymentSimulator from "@/components/DemoPaymentSimulator";
 import { supabase } from "@/lib/supabase";
 
 type PaymentStatus = AdminPaymentStatus;
@@ -131,6 +132,8 @@ export default function PaymentVerificationDashboard() {
           </button>
         ))}
       </div>
+
+      <DemoPaymentSimulator />
 
       <div className="panel-border rounded-2xl bg-[#0b1323]/80 p-4 sm:p-5">
         <div className="flex flex-col gap-4 xl:flex-row xl:items-center xl:justify-between">
