@@ -81,3 +81,7 @@ The authenticated browser session remains active after a route refresh, showing 
 ## Authenticated Maybank checkout verification
 
 In the authenticated checkout session, selecting Maybank displayed the Bank Account category, beneficiary/account holder IMON KHAN, Maybank account number 5140 1212 2490, and three bank-transfer instructions: open a bank transfer service and select Maybank as the receiving bank; transfer the approved membership amount to the displayed account number; and save the bank transfer reference and upload a readable proof screenshot. The required reference field is labeled “Maybank transfer reference,” with helper text instructing the user to use the transaction or transfer reference from the completed payment. The proof control is labeled “Payment proof screenshot” / “Choose screenshot,” accepting JPG, PNG, or WEBP up to 3.0 MB. No reference, proof, acknowledgement, or submission was entered.
+
+## 2026-09-03 — Admin verification dashboard preview
+
+The protected `/admin/payments` and `/admin/memberships` routes were captured at 1280×720. Both correctly show the secure sign-in gate when the preview session is not authenticated, confirming that the administrator dashboard remains protected from public access. The implemented dashboard code includes responsive KPI cards, status filters, search, live payment and membership queries, private proof preview, approval/request-information/rejection actions, and a handoff from membership overview to payment review. Full validation passed with 13 test files, 30 tests, and TypeScript checks.

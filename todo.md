@@ -108,3 +108,9 @@
 - [x] Prepare the most suitable supplied 4D results image for the daily-photo slot at a web-friendly size and compression level.
 - [x] Publish the prepared daily photo through the project-scoped storage/metadata flow and verify it renders on the public home page.
 - [x] Record the final dimensions and file size, synchronize the asset decision to GitHub/Supabase, and save a checkpoint.
+
+- [x] Define a normalized membership/payment/audit schema with user-specific RLS and administrator-only approval mutations.
+- [x] Add the admin payment-verification dashboard with filters, detail review, proof access, approve/reject/request-information actions, and membership status visibility.
+- [ ] Add schema/RLS/workflow tests, responsive verification notes, GitHub/Supabase synchronization, and a final checkpoint for the dashboard release.
+
+- [x] Correct membership approval audit-event capture so activation versus extension and previous membership status are recorded accurately.
