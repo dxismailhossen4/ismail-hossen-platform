@@ -108,3 +108,7 @@
 - [x] Prepare the most suitable supplied 4D results image for the daily-photo slot at a web-friendly size and compression level.
 - [x] Publish the prepared daily photo through the project-scoped storage/metadata flow and verify it renders on the public home page.
 - [x] Record the final dimensions and file size, synchronize the asset decision to GitHub/Supabase, and save a checkpoint.
+
+- [x] Add a persisted Free Tips content model with admin-only writes, public read access, publication status, and created/updated timestamps.
+- [x] Add an Admin → Site Content Free Tips editor for creating, editing, publishing, and replacing the daily public tip.
+- [ ] Render the published Free Tips item publicly with a responsible-use notice and add validation tests, verification notes, GitHub/Supabase synchronization, and a checkpoint.

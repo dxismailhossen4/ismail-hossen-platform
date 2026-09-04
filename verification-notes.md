@@ -81,3 +81,9 @@ The authenticated browser session remains active after a route refresh, showing 
 ## Authenticated Maybank checkout verification
 
 In the authenticated checkout session, selecting Maybank displayed the Bank Account category, beneficiary/account holder IMON KHAN, Maybank account number 5140 1212 2490, and three bank-transfer instructions: open a bank transfer service and select Maybank as the receiving bank; transfer the approved membership amount to the displayed account number; and save the bank transfer reference and upload a readable proof screenshot. The required reference field is labeled “Maybank transfer reference,” with helper text instructing the user to use the transaction or transfer reference from the completed payment. The proof control is labeled “Payment proof screenshot” / “Choose screenshot,” accepting JPG, PNG, or WEBP up to 3.0 MB. No reference, proof, acknowledgement, or submission was entered.
+
+## 2026-09-04 — Free Tips publishing workflow
+
+Desktop preview confirms `/free-tips` now includes a dedicated Today’s public tip card with a safe no-published-tip empty state and visible informational disclaimer. `/admin/site-content` remains protected by the administrator sign-in gate in an unauthenticated preview session; the Free Tips publisher is available behind that route for admin accounts.
+
+Mobile preview confirms the Free Tips public card stacks cleanly, remains readable at 390px width, and keeps the informational disclaimer visible. The protected Admin Site Content route remains a clear sign-in gate on mobile without clipping. No image or public tip is fabricated while the admin has not published one.

@@ -1,7 +1,10 @@
 import PublicLayout from "@/components/PublicLayout";
 import type { PublicPageKey } from "@/lib/navigation";
+import { formatFreeTipDate } from "@/lib/freeTips";
+import { supabase } from "@/lib/supabase";
 import { ArrowRight, Check, CircleHelp, LockKeyhole, Mail, ShieldCheck } from "lucide-react";
 import { useLocation } from "wouter";
+import { useEffect, useState } from "react";
 
 type ContentBlock = { title: string; body: string; icon: "check" | "shield" | "help" | "mail" | "lock" };
 type PageContent = { eyebrow: string; title: string; intro: string; blocks: ContentBlock[]; cta?: { label: string; path: string } };
@@ -91,9 +94,24 @@ const PAGE_CONTENT: Record<PublicPageKey, PageContent> = {
 
 const ICONS = { check: Check, shield: ShieldCheck, help: CircleHelp, mail: Mail, lock: LockKeyhole };
 
+type PublishedFreeTip = { title: string; body: string; published_at: string | null };
+
 export default function PublicPage({ page }: { page: PublicPageKey }) {
   const [, setLocation] = useLocation();
   const content = PAGE_CONTENT[page];
+  const [publishedTip, setPublishedTip] = useState<PublishedFreeTip | null>(null);
+  const [tipLoading, setTipLoading] = useState(page === "free-tips");
+
+  useEffect(() => {
+    if (page !== "free-tips") return;
+    let active = true;
+    void supabase.from("free_tip_posts").select("title,body,published_at").eq("is_published", true).order("published_at", { ascending: false }).limit(1).maybeSingle().then(({ data }) => {
+      if (!active) return;
+      setPublishedTip((data as PublishedFreeTip | null) ?? null);
+      setTipLoading(false);
+    });
+    return () => { active = false; };
+  }, [page]);
 
   return (
     <PublicLayout>
@@ -105,6 +123,12 @@ export default function PublicPage({ page }: { page: PublicPageKey }) {
           <p className="relative mt-5 max-w-3xl text-base leading-7 text-slate-300 sm:text-lg sm:leading-8">{content.intro}</p>
           {content.cta ? <button type="button" onClick={() => setLocation(content.cta!.path)} className="soft-button orange-glow relative mt-8 inline-flex min-h-12 items-center gap-2 rounded-xl bg-[#ff6b00] px-5 py-3 text-sm font-extrabold text-[#1c0b00] focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#ffad70]">{content.cta.label}<ArrowRight className="size-4" aria-hidden="true" /></button> : null}
         </section>
+
+        {page === "free-tips" ? <section className="mt-6 rounded-2xl border border-orange-300/20 bg-orange-400/[0.06] p-6 sm:p-8">
+          <div className="flex flex-wrap items-center justify-between gap-3"><p className="text-xs font-extrabold tracking-[0.16em] text-orange-300 uppercase">Today’s public tip</p>{publishedTip ? <span className="text-xs font-semibold text-slate-500">Published {formatFreeTipDate(publishedTip.published_at)}</span> : null}</div>
+          {tipLoading ? <p className="mt-4 text-sm text-slate-400">Loading today’s tip…</p> : publishedTip ? <><h2 className="font-display mt-4 text-2xl font-extrabold tracking-[-0.04em] text-white">{publishedTip.title}</h2><p className="mt-3 whitespace-pre-line text-sm leading-7 text-slate-300">{publishedTip.body}</p></> : <p className="mt-4 text-sm leading-6 text-slate-400">No public tip has been published yet. Please check back for the next daily update.</p>}
+          <p className="mt-5 border-t border-orange-300/15 pt-4 text-xs leading-5 text-slate-500">Informational content only. No result, win, or profit is guaranteed.</p>
+        </section> : null}
 
         <section className="mt-6 grid gap-4 md:grid-cols-3">
           {content.blocks.map((block) => {
