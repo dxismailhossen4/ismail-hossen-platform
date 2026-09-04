@@ -109,6 +109,18 @@
 - [x] Publish the prepared daily photo through the project-scoped storage/metadata flow and verify it renders on the public home page.
 - [x] Record the final dimensions and file size, synchronize the asset decision to GitHub/Supabase, and save a checkpoint.
 
+- [x] Define a normalized membership/payment/audit schema with user-specific RLS and administrator-only approval mutations.
+- [x] Add the admin payment-verification dashboard with filters, detail review, proof access, approve/reject/request-information actions, and membership status visibility.
+- [x] Add schema/RLS/workflow tests, responsive verification notes, GitHub/Supabase synchronization, and a final checkpoint for the dashboard release.
+
+- [x] Correct membership approval audit-event capture so activation versus extension and previous membership status are recorded accurately.
+
+- [x] Add an admin-only non-production demo payment simulator for Pending → Approve and Pending → Reject without inserting synthetic records into the real payments table.
+- [x] Add configurable Free, Member/Freemium Plus, and VIP content-access rules with administrator controls and server-side enforcement.
+- [x] Add user-scoped realtime payment-status updates and accessible success, rejection, and information-request notifications.
+- [ ] Add focused tests, responsive verification, audit notes, GitHub/Supabase synchronization, and a final checkpoint for the demo/permissions/realtime release.
+
 - [x] Add a persisted Free Tips content model with admin-only writes, public read access, publication status, and created/updated timestamps.
 - [x] Add an Admin → Site Content Free Tips editor for creating, editing, publishing, and replacing the daily public tip.
-- [ ] Render the published Free Tips item publicly with a responsible-use notice and add validation tests, verification notes, GitHub/Supabase synchronization, and a checkpoint.
+- [x] Render the published Free Tips item publicly with a responsible-use notice and add validation tests; final synchronization and checkpoint are tracked in the next item.
+- [ ] Synchronize the restored Free Tips changes to GitHub/Supabase and save the final checkpoint.

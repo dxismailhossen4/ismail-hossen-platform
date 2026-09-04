@@ -82,8 +82,16 @@ The authenticated browser session remains active after a route refresh, showing 
 
 In the authenticated checkout session, selecting Maybank displayed the Bank Account category, beneficiary/account holder IMON KHAN, Maybank account number 5140 1212 2490, and three bank-transfer instructions: open a bank transfer service and select Maybank as the receiving bank; transfer the approved membership amount to the displayed account number; and save the bank transfer reference and upload a readable proof screenshot. The required reference field is labeled “Maybank transfer reference,” with helper text instructing the user to use the transaction or transfer reference from the completed payment. The proof control is labeled “Payment proof screenshot” / “Choose screenshot,” accepting JPG, PNG, or WEBP up to 3.0 MB. No reference, proof, acknowledgement, or submission was entered.
 
-## 2026-09-04 — Free Tips publishing workflow
+## 2026-09-03 — Admin verification dashboard preview
 
-Desktop preview confirms `/free-tips` now includes a dedicated Today’s public tip card with a safe no-published-tip empty state and visible informational disclaimer. `/admin/site-content` remains protected by the administrator sign-in gate in an unauthenticated preview session; the Free Tips publisher is available behind that route for admin accounts.
+The protected `/admin/payments` and `/admin/memberships` routes were captured at 1280×720. Both correctly show the secure sign-in gate when the preview session is not authenticated, confirming that the administrator dashboard remains protected from public access. The implemented dashboard code includes responsive KPI cards, status filters, search, live payment and membership queries, private proof preview, approval/request-information/rejection actions, and a handoff from membership overview to payment review. Full validation passed with 13 test files, 30 tests, and TypeScript checks.
 
-Mobile preview confirms the Free Tips public card stacks cleanly, remains readable at 390px width, and keeps the informational disclaimer visible. The protected Admin Site Content route remains a clear sign-in gate on mobile without clipping. No image or public tip is fabricated while the admin has not published one.
+The same protected `/admin/payments` and `/admin/memberships` entry states were captured at 390×844. The private-access card, Sign In CTA, and Back to home escape route remain centered, readable, and unclipped on mobile. Internal dashboard records remain available only after authenticated administrator access.
+
+## 2026-09-03 — Demo payment, content-tier, and realtime account UI
+
+Desktop previews of `/admin/payments`, `/admin/memberships`, and `/account` remain protected by the sign-in gate when the preview session is not authenticated. The new admin UI is implemented behind these routes: the payment page includes a synthetic-only demo simulator, and the memberships page includes live membership status plus Free/Member/VIP rule controls. The account page includes a dismissible realtime-status notification banner; actual notification delivery requires an authenticated user and Supabase Realtime event.
+
+## 2026-09-03 — Demo simulator, tier permissions, and realtime notification preview
+
+Desktop captures of `/admin/payments`, `/admin/memberships`, and `/account` continue to show the secure sign-in gate when the preview session is unauthenticated. This confirms that the new demo simulator, content-tier controls, and realtime account notification banner remain behind protected routes. Automated validation passed with 15 test files, 34 tests, and TypeScript checks.
