@@ -10,12 +10,12 @@ import { useEffect, useRef, useState } from "react";
 import { useLocation } from "wouter";
 
 const MEMBER_BENEFITS = ["Focused daily updates", "A disciplined member flow", "Clear access pathway"];
-const PLATFORM_LOGO_URL = "/manus-storage/singapore-pools-4d6d-logo_aa58b28a.png";
-const PROOF_MEDIA_URL = "/manus-storage/proof-media_40227d60.mp4";
+const PLATFORM_LOGO_URL = "/assets/singapore-pools-4d6d-logo_aa58b28a.png";
+const PROOF_MEDIA_URL = "/assets/proof-media_40227d60.mp4";
 const SUPPORTING_LOGOS = [
-  { src: "/manus-storage/magnum-logo_29ab8008.png", alt: "Magnum logo", className: "-rotate-3" },
-  { src: "/manus-storage/toto-style-mark_9f47c151.png", alt: "TOTO-style red and gold mark", className: "translate-y-2 rotate-2" },
-  { src: "/manus-storage/nine-lotto-mark-clean_647d2236.png", alt: "Nine Lotto logo mark", className: "rotate-3" },
+  { src: "/assets/magnum-logo_29ab8008.png", alt: "Magnum logo", className: "-rotate-3" },
+  { src: "/assets/toto-style-mark_9f47c151.png", alt: "TOTO-style red and gold mark", className: "translate-y-2 rotate-2" },
+  { src: "/assets/nine-lotto-mark-clean_647d2236.png", alt: "Nine Lotto logo mark", className: "rotate-3" },
 ];
 
 export default function Home() {

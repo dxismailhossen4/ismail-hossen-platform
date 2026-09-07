@@ -21,6 +21,6 @@ describe("payment channel configuration", () => {
 
   it("provides visual identity metadata for every payment choice", () => {
     expect(PAYMENT_CHANNELS.map((channel) => channel.localLabel)).toEqual(["বিকাশ", "নগদ", "Maybank"]);
-    expect(PAYMENT_CHANNELS.every((channel) => channel.logoUrl.startsWith("/manus-storage/") && channel.logoAlt.endsWith("logo"))).toBe(true);
+    expect(PAYMENT_CHANNELS.every((channel) => channel.logoUrl.startsWith("/assets/") && channel.logoAlt.endsWith("logo"))).toBe(true);
   });
 });
